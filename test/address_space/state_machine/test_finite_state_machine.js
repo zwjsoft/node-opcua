@@ -12,6 +12,7 @@ var DataType            = opcua.DataType;
 var coerceLocalizedText = opcua.coerceLocalizedText;
 var StatusCodes         = opcua.StatusCodes;
 import UAStateMachine from "lib/address_space/state_machine/UAStateMachine";
+import UAObjectType from "lib/address_space/UAObjectType";
 
 var doDebug = false;
 
@@ -253,7 +254,6 @@ describe("Testing Finite State Machine", function () {
             var _ = require("underscore");
             require("requirish")._(module);
 
-            var UAObjectType = require("lib/address_space/ua_object_type").UAObjectType;
             var myFiniteStateMachine = addressSpace.addObjectType({
                 browseName: "MyFiniteStateMachine",
                 subtypeOf: "FiniteStateMachineType"

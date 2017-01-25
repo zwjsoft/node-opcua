@@ -9,7 +9,6 @@ var path = require("path");
 
 var async = require("async");
 
-var Method = require("lib/address_space/ua_method").Method;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 
 var DataType = require("lib/datamodel/variant").DataType;
@@ -20,7 +19,7 @@ var generate_address_space = require("lib/address_space/load_nodeset2").generate
 var coerceLocalizedText = require("lib/datamodel/localized_text").coerceLocalizedText;
 var NodeId = require("lib/datamodel/nodeid").NodeId;
 //var conditions =require("lib/address_space/alarms_and_conditions/condition");
-var UAMethod = require("lib/address_space/ua_method").UAMethod;
+import UAMethod  from "lib/address_space/UAMethod";
 
 require("lib/address_space/add-enumeration-type/install");
 

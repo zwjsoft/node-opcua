@@ -8,7 +8,6 @@ var path = require("path");
 
 var async = require("async");
 
-var Method = require("lib/address_space/ua_method").Method;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 
 var DataType = require("lib/datamodel/variant").DataType;
