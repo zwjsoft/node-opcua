@@ -11,7 +11,6 @@ var async = require("async");
 import ServerEngine from "lib/server/ServerEngine";
 
 
-var Method = require("lib/address_space/ua_method").Method;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 
 var DataType = require("lib/datamodel/variant").DataType;
@@ -21,7 +20,7 @@ import AddressSpace from "lib/address_space/AddressSpace";
 var coerceLocalizedText = require("lib/datamodel/localized_text").coerceLocalizedText;
 var Variant = require("lib/datamodel/variant").Variant;
 var NodeId = require("lib/datamodel/nodeid").NodeId;
-var UAObject = require("lib/address_space/ua_object").UAObject;
+import UAObject from "lib/address_space/UAObject";
 
 import ConditionInfo from "lib/address_space/alarms_and_conditions/ConditionInfo";
 

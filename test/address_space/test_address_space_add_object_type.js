@@ -9,15 +9,15 @@ var _ = require("underscore");
 var assert = require("better-assert");
 var path = require("path");
 
-var Method = require("lib/address_space/ua_method").Method;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
-var UAObjectType = require("lib/address_space/ua_object_type").UAObjectType;
+import UAObjectType from "lib/address_space/UAObjectType";
 
 var DataType = require("lib/datamodel/variant").DataType;
 var AttributeIds = require("lib/services/read_service").AttributeIds;
 import AddressSpace from "lib/address_space/AddressSpace";
 var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
 var NodeId = require("lib/datamodel/nodeid").NodeId;
+import UAMethod  from "lib/address_space/UAMethod";
 
 describe("testing add new ObjectType ", function () {
 
@@ -159,7 +159,6 @@ describe("testing add new ObjectType ", function () {
         var c = camera1.getComponents();
         c.length.should.eql(1," expecting camera1 to have 1 component => the Method");
 
-        var UAMethod = require("lib/address_space/ua_method").UAMethod;
         c[0].should.be.instanceOf(UAMethod);
         c[0].browseName.toString().should.eql("1:Trigger");
 

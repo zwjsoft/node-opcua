@@ -13,8 +13,8 @@ var DataType = opcua.DataType;
 var DataValue = opcua.DataValue;
 var standardUnits = opcua.standardUnits;
 
-var UAMethod = require("lib/address_space/ua_method").UAMethod;
-var UAObject = require("lib/address_space/ua_object").UAObject;
+import UAMethod  from "lib/address_space/UAMethod";
+import UAObject from "lib/address_space/UAObject";
 
 import UAStateMachine from "lib/address_space/state_machine/UAStateMachine";
 

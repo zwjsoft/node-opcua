@@ -13,6 +13,8 @@ var Variant = require("lib/datamodel/variant").Variant;
 var get_mini_address_space = require("test/fixtures/fixture_mininodeset_address_space").get_mini_address_space;
 import AddressSpace from "lib/address_space/AddressSpace";
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
+import UAObject from "lib/address_space/UAObject";
+import UAMethod  from "lib/address_space/UAMethod";
 //xx var getMethodDeclaration_ArgumentList = require("lib/datamodel/argument_list").getMethodDeclaration_ArgumentList;
 //xx var Argument =require("lib/datamodel/argument_list").Argument;
 
@@ -114,9 +116,7 @@ describe("CallRequest on custom method", function () {
             }
         });
     });
-    var UAObject = require("lib/address_space/ua_object").UAObject;
-    var UAMethod = require("lib/address_space/ua_method").UAMethod;
-
+    
     it("Q3 should encode and decode a method call request", function (done) {
 
         var objectId = opcua.makeNodeId(999990, 0);

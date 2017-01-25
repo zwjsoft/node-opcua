@@ -1,7 +1,6 @@
 /* global describe,it,before*/
 require("requirish")._(module);
 var should = require("should");
-var Method = require("lib/address_space/ua_method").Method;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 
 var DataType = require("lib/datamodel/variant").DataType;
@@ -12,7 +11,7 @@ var generate_address_space = require("lib/address_space/load_nodeset2").generate
 var NodeId = require("lib/datamodel/nodeid").NodeId;
 
 var UADataType = require("lib/address_space/ua_data_type").UADataType;
-var UAObject = require("lib/address_space/ua_object").UAObject;
+import UAObject from "lib/address_space/UAObject";
 import UAVariable from "lib/address_space/UAVariable";
 var Variant = require("lib/datamodel/variant").Variant;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;

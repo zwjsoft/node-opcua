@@ -87,8 +87,8 @@ const ServerState        = require("schemas/39394884f696ff0bf66bacc9a8032cc074e0
 const SecurityPolicy     = require("lib/misc/security_policy").SecurityPolicy;
 const ServiceCounter     = require("_generated_/_auto_generated_ServiceCounter").ServiceCounter;
 // basic opcua NodeClass
-const UAObject  = require("lib/address_space/ua_object").UAObject;
-const UAMethod  = require("lib/address_space/ua_method").UAMethod;
+import UAObject from "lib/address_space/UAObject";
+import UAMethod  from "lib/address_space/UAMethod";
 import UAVariable from "lib/address_space/UAVariable";
 
 const UADataType= require("lib/address_space/ua_data_type").UADataType;
