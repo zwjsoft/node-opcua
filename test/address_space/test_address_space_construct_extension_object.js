@@ -27,7 +27,7 @@ var fs = require("fs");
 var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
 
 
-var UADataType = require("lib/address_space/ua_data_type").UADataType;
+import UADataType from "lib/address_space/UADataType";
 import UAVariableType from "lib/address_space/ua-variable-type/UAVariableType";
 import UAObject from "lib/address_space/UAObject";
 var DataType = require("lib/datamodel/variant").DataType;

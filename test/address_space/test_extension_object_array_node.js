@@ -10,7 +10,7 @@ var _ = require("underscore");
 var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
 var NodeId = require("lib/datamodel/nodeid").NodeId;
 
-var UADataType = require("lib/address_space/ua_data_type").UADataType;
+import UADataType from "lib/address_space/UADataType";
 import UAObject from "lib/address_space/UAObject";
 import UAVariable from "lib/address_space/UAVariable";
 var Variant = require("lib/datamodel/variant").Variant;

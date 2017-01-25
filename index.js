@@ -91,7 +91,7 @@ import UAObject from "lib/address_space/UAObject";
 import UAMethod  from "lib/address_space/UAMethod";
 import UAVariable from "lib/address_space/UAVariable";
 
-const UADataType= require("lib/address_space/ua_data_type").UADataType;
+import UADataType from "lib/address_space/UADataType";
 
 
 const AnonymousIdentityToken = session_service.AnonymousIdentityToken;
