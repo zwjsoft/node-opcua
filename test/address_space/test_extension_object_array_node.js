@@ -15,14 +15,14 @@ import UAObject from "lib/address_space/UAObject";
 import UAVariable from "lib/address_space/UAVariable";
 var Variant = require("lib/datamodel/variant").Variant;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
-
-
+import createExtObjArrayNode from "lib/address_space/extension-object-array-node/createExtObjArrayNode";
+import addElement from "lib/address_space/extension-object-array-node/addElement";
+import removeElement from "lib/address_space/extension-object-array-node/removeElement";
 
 var path = require("path");
 
 var SubscriptionDiagnostics = require("schemas/39394884f696ff0bf66bacc9a8032cc074e0158e/SubscriptionDiagnostics").SubscriptionDiagnostics;
 
-var eoan = require("lib/address_space/extension_object_array_node");
 
 describe("Extension Object Array Node (or Complex Variable)",function() {
 
@@ -55,7 +55,7 @@ describe("Extension Object Array Node (or Complex Variable)",function() {
         var rootFolder = addressSpace.findNode("RootFolder");
 
 
-        var arr = eoan.createExtObjArrayNode(rootFolder,{
+        var arr = createExtObjArrayNode(rootFolder,{
             browseName:          "SubscriptionDiagnosticArrayForTest1",
             complexVariableType: "SubscriptionDiagnosticsArrayType",
             variableType:        "SubscriptionDiagnosticsType",
@@ -82,7 +82,7 @@ describe("Extension Object Array Node (or Complex Variable)",function() {
         arr.readValue().value.value.length.should.eql(0, "expecting no element in array");
 
 
-        var elVar = eoan.addElement(options,arr);
+        var elVar = addElement(options,arr);
 
 
         arr.readValue().value.value.length.should.eql(1, "expecting a new element in array");
@@ -108,16 +108,16 @@ describe("Extension Object Array Node (or Complex Variable)",function() {
 
         var rootFolder = addressSpace.findNode("RootFolder");
 
-        var arr = eoan.createExtObjArrayNode(rootFolder,{
+        var arr = createExtObjArrayNode(rootFolder,{
             browseName:          "SubscriptionDiagnosticArrayForTest2",
             complexVariableType: "SubscriptionDiagnosticsArrayType",
             variableType:        "SubscriptionDiagnosticsType",
             indexPropertyName:   "subscriptionId"
         });
 
-        var elVar1 = eoan.addElement({subscriptionId: 1000},arr);
-        var elVar2 = eoan.addElement({subscriptionId: 1001},arr);
-        var elVar3 = eoan.addElement({subscriptionId: 1002},arr);
+        var elVar1 = addElement({subscriptionId: 1000},arr);
+        var elVar2 = addElement({subscriptionId: 1001},arr);
+        var elVar3 = addElement({subscriptionId: 1002},arr);
 
         elVar1.browseName.toString().should.eql("1000");
         elVar2.browseName.toString().should.eql("1001");
@@ -130,21 +130,21 @@ describe("Extension Object Array Node (or Complex Variable)",function() {
 
         var rootFolder = addressSpace.findNode("RootFolder");
 
-        var arr = eoan.createExtObjArrayNode(rootFolder,{
+        var arr = createExtObjArrayNode(rootFolder,{
             browseName:          "SubscriptionDiagnosticArrayForTest3",
             complexVariableType: "SubscriptionDiagnosticsArrayType",
             variableType:        "SubscriptionDiagnosticsType",
             indexPropertyName:   "subscriptionId"
         });
 
-        var elVar1 = eoan.addElement({subscriptionId: 1000},arr);
-        var elVar2 = eoan.addElement({subscriptionId: 1001},arr);
-        var elVar3 = eoan.addElement({subscriptionId: 1002},arr);
-        var elVar4 = eoan.addElement({subscriptionId: 1003},arr);
+        var elVar1 = addElement({subscriptionId: 1000},arr);
+        var elVar2 = addElement({subscriptionId: 1001},arr);
+        var elVar3 = addElement({subscriptionId: 1002},arr);
+        var elVar4 = addElement({subscriptionId: 1003},arr);
         arr.readValue().value.value.length.should.eql(4, "expecting 4 elements in array");
 
 
-        eoan.removeElement(arr,elVar1);
+        removeElement(arr,elVar1);
         arr.readValue().value.value.length.should.eql(3, "expecting 3 elements in array");
 
         arr.readValue().value.value[0].subscriptionId.should.eql(1001);
@@ -153,7 +153,7 @@ describe("Extension Object Array Node (or Complex Variable)",function() {
 
         should.exist(arr.getComponentByName("1002"));
 
-        eoan.removeElement(arr,1); // at pos 1
+        removeElement(arr,1); // at pos 1
 
         arr.readValue().value.value[0].subscriptionId.should.eql(1001);
         arr.readValue().value.value[1].subscriptionId.should.eql(1003);
