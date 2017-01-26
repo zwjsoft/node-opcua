@@ -1,6 +1,6 @@
 "use strict";
 require("requirish")._(module);
-var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
+import generateAddressSpace from "lib/address_space/generateAddressSpace";
 import AddressSpace from "lib/address_space/AddressSpace";
 var DataType = require("lib/datamodel/variant").DataType;
 var should = require("should");
@@ -40,7 +40,7 @@ describe("testing NodeSet XML file loading", function () {
 
         fs.existsSync(xml_file).should.be.eql(true);
 
-        generate_address_space(addressSpace, xml_file, function (err) {
+        generateAddressSpace(addressSpace, xml_file, function (err) {
 
             Object.keys(addressSpace._aliases).length.should.be.greaterThan(10);
             Object.keys(addressSpace._variableTypeMap).length.should.be.greaterThan(3);
@@ -59,7 +59,7 @@ describe("testing NodeSet XML file loading", function () {
         var xml_file = path.join(__dirname,"../../nodesets/Opc.Ua.NodeSet2.xml");
         fs.existsSync(xml_file).should.be.eql(true);
 
-        generate_address_space(addressSpace, xml_file, function (err) {
+        generateAddressSpace(addressSpace, xml_file, function (err) {
 
             Object.keys(addressSpace._aliases).length.should.be.greaterThan(10);
             Object.keys(addressSpace._variableTypeMap).length.should.be.greaterThan(10);
@@ -80,7 +80,7 @@ describe("testing NodeSet XML file loading", function () {
         fs.existsSync(xml_files[0]).should.be.eql(true, " standard node set file shall exist");
         fs.existsSync(xml_files[1]).should.be.eql(true, " DI node set file shall exist");
 
-        generate_address_space(addressSpace, xml_files, function (err) {
+        generateAddressSpace(addressSpace, xml_files, function (err) {
 
             Object.keys(addressSpace._aliases).length.should.be.greaterThan(10);
             Object.keys(addressSpace._variableTypeMap).length.should.be.greaterThan(10);
@@ -105,7 +105,7 @@ describe("testing NodeSet XML file loading", function () {
         fs.existsSync(xml_files[0]).should.be.eql(true);
         fs.existsSync(xml_files[1]).should.be.eql(true);
 
-        generate_address_space(addressSpace, xml_files, function (err) {
+        generateAddressSpace(addressSpace, xml_files, function (err) {
 
 
             var someVariable = addressSpace.findNode("ns=1;i=2");
@@ -142,7 +142,7 @@ describe("testing NodeSet XML file loading", function () {
         fs.existsSync(xml_files[0]).should.be.eql(true);
         fs.existsSync(xml_files[1]).should.be.eql(true);
 
-        generate_address_space(addressSpace, xml_files, function (err) {
+        generateAddressSpace(addressSpace, xml_files, function (err) {
 
             var someStringVariable = addressSpace.findNode("ns=1;i=2");
             someStringVariable.browseName.toString().should.eql("1:SomeStringVariable");
@@ -168,7 +168,7 @@ describe("testing NodeSet XML file loading", function () {
         var xml_files = [
             xml_file1,xml_file2
         ];
-        generate_address_space(addressSpace, xml_files, function (err) {
+        generateAddressSpace(addressSpace, xml_files, function (err) {
 
             var ns = addressSpace.getNamespaceIndex("MYNAMESPACE");
             var  my3x3MatrixType = addressSpace.findVariableType("My3x3MatrixType",ns);

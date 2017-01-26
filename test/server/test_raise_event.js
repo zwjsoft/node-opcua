@@ -18,7 +18,7 @@ var path = require("path");
 var assert = require("better-assert");
 var util = require("util");
 
-var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
+import generateAddressSpace from "lib/address_space/generateAddressSpace";
 
 var checkSelectClauses = require("lib/tools/tools_event_filter").checkSelectClauses;
 var extractEventFields = require("lib/tools/tools_event_filter").extractEventFields;
@@ -36,7 +36,7 @@ describe("testing Events  ", function () {
         addressSpace = new AddressSpace();
         var xml_file = path.join(__dirname,"../../lib/server/mini.Node.Set2.xml");
         require("fs").existsSync(xml_file).should.be.eql(true);
-        generate_address_space(addressSpace, xml_file, function (err) {
+        generateAddressSpace(addressSpace, xml_file, function (err) {
             eventType = addressSpace.addEventType({browseName: "MyEventType"});
             done(err);
         });

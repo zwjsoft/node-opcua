@@ -1,7 +1,7 @@
 var assert = require("better-assert");
 require("requirish")._(module);
 
-var Reference = require("lib/address_space/reference").Reference;
+import Reference from "lib/address_space/Reference";
 var sameNodeId = require("lib/datamodel/nodeid").sameNodeId;
 
 /**

@@ -3,7 +3,7 @@ require("requirish")._(module);
 var assert = require("better-assert");
 var should = require("should");
 
-var makeOptionalsMap = require("lib/address_space/make_optionals_map").makeOptionalsMap;
+import makeOptionalsMap from "lib/address_space/makeOptionalsMap";
 
 describe("Testing makeOptionalsMap",function(){
 

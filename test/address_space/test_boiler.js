@@ -4,7 +4,7 @@ require("requirish")._(module);
 
 var path = require("path");
 var async = require("async");
-var generateAddressSpace = require("lib/address_space/load_nodeset2").generate_address_space;
+import generateAddressSpace from "lib/address_space/generateAddressSpace";
 import AddressSpace from "lib/address_space/AddressSpace";
 
 import UAStateMachine from "lib/address_space/state_machine/UAStateMachine";
