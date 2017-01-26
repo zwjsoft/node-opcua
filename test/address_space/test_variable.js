@@ -5,6 +5,7 @@ var async = require("async");
 var path = require("path");
 import AddressSpace from "lib/address_space/AddressSpace";
 import UAVariable from "lib/address_space/UAVariable";
+import generateAddressSpace from "lib/address_space/generateAddressSpace";
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 var DataType = require("lib/datamodel/variant").DataType;
 var Variant = require("lib/datamodel/variant").Variant;
@@ -87,7 +88,6 @@ describe("testing Variables ", function () {
 
 });
 
-var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
 var NodeId = require("lib/datamodel/nodeid").NodeId;
 var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
 
@@ -98,7 +98,7 @@ describe("Address Space : add Variable :  testing various variations for specify
     require("test/helpers/resource_leak_detector").installResourceLeakDetector(true,function() {
         before(function (done) {
             addressSpace = new AddressSpace();
-            generate_address_space(addressSpace, nodeset_filename, function () {
+            generateAddressSpace(addressSpace, nodeset_filename, function () {
 
                 rootFolder = addressSpace.findNode("RootFolder");
 
@@ -228,7 +228,7 @@ describe("testing Variable#bindVariable", function () {
     require("test/helpers/resource_leak_detector").installResourceLeakDetector(true,function() {
         before(function (done) {
             addressSpace = new AddressSpace();
-            generate_address_space(addressSpace, nodeset_filename, function () {
+            generateAddressSpace(addressSpace, nodeset_filename, function () {
 
                 rootFolder = addressSpace.findNode("RootFolder");
 
@@ -730,7 +730,7 @@ describe("testing Variable#writeValue Scalar", function () {
         before(function (done) {
 
             addressSpace = new AddressSpace();
-            generate_address_space(addressSpace, nodeset_filename, function () {
+            generateAddressSpace(addressSpace, nodeset_filename, function () {
 
                 rootFolder = addressSpace.findNode("RootFolder");
 
@@ -805,7 +805,7 @@ describe("testing Variable#writeValue Array", function () {
 
         before(function (done) {
             addressSpace = new AddressSpace();
-            generate_address_space(addressSpace, nodeset_filename, function () {
+            generateAddressSpace(addressSpace, nodeset_filename, function () {
 
                 rootFolder = addressSpace.findNode("RootFolder");
 
@@ -1077,7 +1077,7 @@ describe("testing Variable#writeValue on Integer", function () {
 
         before(function (done) {
             addressSpace = new AddressSpace();
-            generate_address_space(addressSpace, nodeset_filename, function () {
+            generateAddressSpace(addressSpace, nodeset_filename, function () {
 
                 rootFolder = addressSpace.findNode("RootFolder");
 
@@ -1223,7 +1223,7 @@ describe("testing UAVariable ", function () {
 
 
             addressSpace = new AddressSpace();
-            generate_address_space(addressSpace, nodeset_filename, function (err) {
+            generateAddressSpace(addressSpace, nodeset_filename, function (err) {
 
                 if (!err) {
                     rootFolder = addressSpace.findNode("RootFolder");

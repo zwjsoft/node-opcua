@@ -337,14 +337,14 @@ function doit() {
     //has to be required otherwise we get in a mess
     var AddressSpace = require("lib/address_space/AddressSpace").default;
     
-    var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
+    var generateAddressSpace = require("lib/address_space/generateAddressSpace").default;
 
     var createExtensionObjectDefinition = require("lib/address_space/convert_nodeset_to_types").createExtensionObjectDefinition;
 
 
     var addressSpace = new AddressSpace();
 
-    generate_address_space(addressSpace, filename, function () {
+    generateAddressSpace(addressSpace, filename, function () {
         createExtensionObjectDefinition(addressSpace);
 
         console.log("done it");

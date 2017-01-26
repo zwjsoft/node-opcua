@@ -15,7 +15,7 @@ import UAObjectType from "lib/address_space/UAObjectType";
 var DataType = require("lib/datamodel/variant").DataType;
 var AttributeIds = require("lib/services/read_service").AttributeIds;
 import AddressSpace from "lib/address_space/AddressSpace";
-var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
+import generateAddressSpace from "lib/address_space/generateAddressSpace";
 var NodeId = require("lib/datamodel/nodeid").NodeId;
 
 
@@ -27,7 +27,7 @@ describe("Automatic Generation of  string nodeId", function () {
 
         var xml_file = path.join(__dirname, "../../lib/server/mini.Node.Set2.xml");
         require("fs").existsSync(xml_file).should.be.eql(true);
-        generate_address_space(addressSpace, xml_file, function (err) {
+        generateAddressSpace(addressSpace, xml_file, function (err) {
             done(err);
         });
 

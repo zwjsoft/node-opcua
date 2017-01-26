@@ -10,7 +10,7 @@ var coerceNodeId =  require("lib/datamodel/nodeid").coerceNodeId;
 var makeNodeId   =  require("lib/datamodel/nodeid").makeNodeId;
 var QualifiedName = require("lib/datamodel/qualified_name").QualifiedName;
 
-var makeRelativePath = require("lib/address_space/make_relative_path").makeRelativePath;
+import makeRelativePath from "lib/address_space/makeRelativePath";
 var RelativePath = require("_generated_/_auto_generated_RelativePath").RelativePath;
 var RelativePathElement = require("_generated_/_auto_generated_RelativePathElement").RelativePathElement;
 

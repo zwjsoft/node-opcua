@@ -24,7 +24,7 @@ import AddressSpace from "lib/address_space/AddressSpace";
 import ServerEngine from "lib/server/ServerEngine";
 
 var fs = require("fs");
-var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
+import generateAddressSpace from "lib/address_space/generateAddressSpace";
 
 
 import UADataType from "lib/address_space/UADataType";
@@ -54,7 +54,7 @@ describe("testing address space namespace loading", function () {
             addressSpace.registerNamespace("ServerNamespaceURI");
             addressSpace.getNamespaceArray().length.should.eql(2);
 
-            generate_address_space(addressSpace, xml_files, function (err) {
+            generateAddressSpace(addressSpace, xml_files, function (err) {
                 done(err);
             });
         });

@@ -1,7 +1,7 @@
 require("requirish")._(module);
 var should = require("should");
 
-var makeBrowsePath = require("lib/address_space/make_browse_path").makeBrowsePath;
+import makeBrowsePath from "lib/address_space/makeBrowsePath";
 var BrowsePath = require("lib/services/translate_browse_paths_to_node_ids_service").BrowsePath;
 var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
 

@@ -43,7 +43,7 @@ var assert_arrays_are_equal = require("test/helpers/typedarray_helpers").assert_
 var QualifiedName = require("lib/datamodel/qualified_name").QualifiedName;
 import UAVariable from "lib/address_space/UAVariable";
 import UAObject from "lib/address_space/UAObject";
-var Reference = require("lib/address_space/reference").Reference;
+import Reference from "lib/address_space/Reference";
 
 function resolveExpandedNodeId(nodeId) {
     return makeExpandedNodeId(resolveNodeId(nodeId));

@@ -11,7 +11,7 @@ import AddressSpace from "lib/address_space/AddressSpace";
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 
 
-var makeBrowsePath = require("lib/address_space/make_browse_path").makeBrowsePath;
+import makeBrowsePath from "lib/address_space/makeBrowsePath";
 
 var doDebug = false;
 
