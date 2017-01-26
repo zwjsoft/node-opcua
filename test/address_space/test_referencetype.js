@@ -3,6 +3,8 @@
 require("requirish")._(module);
 
 import AddressSpace from "lib/address_space/AddressSpace";
+import BaseNode from "lib/address_space/BaseNode";
+
 var should = require("should");
 var nodeid = require("lib/datamodel/nodeid");
 var AttributeIds = require("lib/datamodel/attributeIds").AttributeIds;
@@ -17,7 +19,7 @@ var redirectToFile = require("lib/misc/utils").redirectToFile;
 var get_mini_address_space = require("test/fixtures/fixture_mininodeset_address_space").get_mini_address_space;
 
 var browse_service = require("lib/services/browse_service");
-
+import dump from "lib/address_space/BaseNode/dumpReferenceDescriptions";
 
 describe("testing ReferenceType", function () {
     var addressSpace;
@@ -254,7 +256,7 @@ describe("testing ReferenceType", function () {
 
         redirectToFile("ReferenceDescription1.log", function () {
             assert(_.isArray(references));
-            var dump = require("lib/address_space/base_node").dumpReferenceDescriptions;
+            
             dump(addressSpace, references);
         }, done);
     });
@@ -283,7 +285,6 @@ describe("testing ReferenceType", function () {
 
         redirectToFile("ReferenceDescription2.log", function () {
             assert(_.isArray(references));
-            var dump = require("lib/address_space/base_node").dumpReferenceDescriptions;
             dump(addressSpace, references);
         }, done);
 
@@ -370,7 +371,6 @@ describe("testing ReferenceType", function () {
     });
 
 
-    var BaseNode = require("lib/address_space/base_node").BaseNode;
     var NodeId = require("lib/datamodel/nodeid").NodeId;
     function _is_valid_BrowseDirection(browseDirection) {
         return  browseDirection === BrowseDirection.Forward ||
