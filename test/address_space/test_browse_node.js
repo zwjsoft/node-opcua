@@ -3,8 +3,8 @@
 require("requirish")._(module);
 var should = require("should");
 
-var dumpReferences = require("lib/address_space/base_node").dumpReferences;
-var dumpBrowseDescription = require("lib/address_space/base_node").dumpBrowseDescription;
+import dumpReferences from "lib/address_space/BaseNode/dumpReferences";
+import dumpBrowseDescription from "lib/address_space/BaseNode/dumpBrowseDescription";
 var browse_service = require("lib/services/browse_service");
 var redirectToFile = require("lib/misc/utils").redirectToFile;
 
