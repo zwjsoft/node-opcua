@@ -1,5 +1,5 @@
 import AttributeIds from "lib/datamodel/attribute-ids/AttributeIds";
-import is_valid_attributeId from "lib/datamodel/attribute-ids/is_valid_attributeId";
+import isValidAttributeId from "lib/datamodel/attribute-ids/isValidAttributeId";
 
 require("lib/datamodel/numeric_range");
 
@@ -9,7 +9,7 @@ const ReadValueId_Schema = {
         { name: "nodeId" ,       fieldType: "NodeId"},
         { name: "attributeId" ,  fieldType: "IntegerId" ,
             validate:function(value){
-                return is_valid_attributeId(value) || value === AttributeIds.INVALID;
+                return isValidAttributeId(value) || value === AttributeIds.INVALID;
             },
             defaultValue: AttributeIds.Value
         }, // see AttributeIds
