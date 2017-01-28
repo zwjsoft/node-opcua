@@ -1,5 +1,8 @@
 /*global describe, it, require*/
 require("requirish")._(module);
+
+import makeBrowsePath from "lib/address_space/makeBrowsePath";
+
 var assert = require("better-assert");
 var async = require("async");
 var should = require("should");
@@ -36,8 +39,7 @@ module.exports = function (test) {
             done();
         });
 
-        var makeBrowsePath = require("lib/address_space/make_browse_path").makeBrowsePath;
-
+        
         it("TBP1 should translate browse path", function (done) {
 
             perform_operation_on_client_session(client, endpointUrl, function (session, inner_done) {

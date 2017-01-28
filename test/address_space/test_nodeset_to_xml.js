@@ -3,7 +3,6 @@
 require("requirish")._(module);
 var should = require("should");
 var path = require("path");
-var Method = require("lib/address_space/ua_method").Method;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 
 var DataType = require("lib/datamodel/variant").DataType;
@@ -12,11 +11,11 @@ var AttributeIds = require("lib/services/read_service").AttributeIds;
 import AddressSpace from "lib/address_space/AddressSpace";
 
 var _ = require("underscore");
-var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
+import generateAddressSpace from "lib/address_space/generateAddressSpace";
 var NodeId = require("lib/datamodel/nodeid").NodeId;
 var assert = require("better-assert");
 
-var dumpXml = require("lib/address_space/nodeset_to_xml").dumpXml;
+import dumpXml from "lib/address_space/dumpXml";
 
 var doDebug = false;
 
@@ -30,7 +29,7 @@ describe("testing nodeset to xml", function () {
 
             require("fs").existsSync(xml_file).should.be.eql(true);
 
-            generate_address_space(addressSpace, xml_file, function (err) {
+            generateAddressSpace(addressSpace, xml_file, function (err) {
                 done(err);
             });
 

@@ -24,12 +24,13 @@ import AddressSpace from "lib/address_space/AddressSpace";
 import ServerEngine from "lib/server/ServerEngine";
 
 var fs = require("fs");
-var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
+import generateAddressSpace from "lib/address_space/generateAddressSpace";
+import makeAccessLevel from "lib/datamodel/access-level/makeAccessLevel";
 
 
-var UADataType = require("lib/address_space/ua_data_type").UADataType;
+import UADataType from "lib/address_space/UADataType";
 import UAVariableType from "lib/address_space/ua-variable-type/UAVariableType";
-var UAObject = require("lib/address_space/ua_object").UAObject;
+import UAObject from "lib/address_space/UAObject";
 var DataType = require("lib/datamodel/variant").DataType;
 var Variant = require("lib/datamodel/variant").Variant;
 
@@ -54,7 +55,7 @@ describe("testing address space namespace loading", function () {
             addressSpace.registerNamespace("ServerNamespaceURI");
             addressSpace.getNamespaceArray().length.should.eql(2);
 
-            generate_address_space(addressSpace, xml_files, function (err) {
+            generateAddressSpace(addressSpace, xml_files, function (err) {
                 done(err);
             });
         });
@@ -248,8 +249,7 @@ it("should bind an xml-preloaded Extension Object Variable : ServerStatus ",func
     var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
     var write_service = require("lib/services/write_service");
     var WriteValue = write_service.WriteValue;
-    var makeAccessLevel = require("lib/datamodel/access_level").makeAccessLevel;
-
+    
     // now use WriteValue instead
     // make sure value is writable
     var rw = makeAccessLevel("CurrentRead | CurrentWrite");

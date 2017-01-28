@@ -15,6 +15,8 @@ var subscription_service = require("lib/services/subscription_service");
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 import Subscription from "lib/server/Subscription";
 import SubscriptionState from "lib/server/SubscriptionState";
+import makeRelativePath from "lib/address_space/makeRelativePath";
+import makeBrowsePath from "lib/address_space/makeBrowsePath";
 
 var TimestampsToReturn = require("lib/services/read_service").TimestampsToReturn;
 
@@ -1168,8 +1170,7 @@ describe("monitoredItem advanced", function () {
 
             add_eventGeneratorObject(engine.addressSpace,"ObjectsFolder");
 
-            var makeRelativePath = require("lib/address_space/make_relative_path").makeRelativePath;
-            var makeBrowsePath = require("lib/address_space/make_browse_path").makeBrowsePath;
+            
             var browsePath = makeBrowsePath("RootFolder","/Objects/EventGeneratorObject");
             var eventGeneratingObject = addressSpace.browsePath(browsePath);
 

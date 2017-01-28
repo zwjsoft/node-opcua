@@ -2,7 +2,7 @@
 /* global describe,it,before*/
 require("requirish")._(module);
 var should = require("should");
-var UAMethod = require("lib/address_space/ua_method").UAMethod;
+import UAMethod  from "lib/address_space/UAMethod";
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 var DataType = require("lib/datamodel/variant").DataType;
 var AttributeIds = require("lib/services/read_service").AttributeIds;

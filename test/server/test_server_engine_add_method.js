@@ -15,8 +15,7 @@ var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 var engine, FolderTypeId, BaseDataVariableTypeId, ref_Organizes_Id;
 
 var getMethodDeclaration_ArgumentList = require("lib/datamodel/argument_list").getMethodDeclaration_ArgumentList;
-var UAMethod = require("lib/address_space/ua_method").UAMethod;
-
+import UAMethod  from "lib/address_space/UAMethod";
 var translate_service = require("lib/services/translate_browse_paths_to_node_ids_service");
 
 var resourceLeakDetector = require("test/helpers/resource_leak_detector").resourceLeakDetector;

@@ -9,6 +9,7 @@ var get_mini_address_space = require("test/fixtures/fixture_mininodeset_address_
 var NodeId = require("lib/datamodel/nodeid").NodeId;
 
 import AddressSpace from "lib/address_space/AddressSpace";
+import generateAddressSpace from "lib/address_space/generateAddressSpace";
 
 describe("testing address space namespace", function () {
 
@@ -38,7 +39,6 @@ describe("testing address space namespace", function () {
 });
 
 var fs = require("fs");
-var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
 
 describe("testing  address space namespace loading", function () {
 
@@ -57,7 +57,7 @@ describe("testing  address space namespace loading", function () {
         addressSpace.registerNamespace("ServerNamespaceURI");
         addressSpace.getNamespaceArray().length.should.eql(2);
 
-        generate_address_space(addressSpace, xml_files, function (err) {
+        generateAddressSpace(addressSpace, xml_files, function (err) {
 
             addressSpace.getNamespaceArray().length.should.eql(4);
             addressSpace.getNamespaceArray()[2].should.eql("http://nodeopcua.org/UA/CUSTOM_NAMESPACE1/");
@@ -91,7 +91,7 @@ describe("testing  address space namespace loading", function () {
         addressSpace.registerNamespace("ServerNamespaceURI");
         addressSpace.getNamespaceArray().length.should.eql(2);
 
-        generate_address_space(addressSpace, xml_files, function (err) {
+        generateAddressSpace(addressSpace, xml_files, function (err) {
 
             addressSpace.getNamespaceArray().length.should.eql(5);
             addressSpace.getNamespaceArray()[2].should.eql("http://nodeopcua.org/UA/CUSTOM_NAMESPACE1/");
@@ -134,7 +134,7 @@ describe("testing  address space namespace loading", function () {
         addressSpace.registerNamespace("ServerNamespaceURI");
         addressSpace.getNamespaceArray().length.should.eql(2);
 
-        generate_address_space(addressSpace, xml_files, function (err) {
+        generateAddressSpace(addressSpace, xml_files, function (err) {
 
             should(err).eql(null);
             addressSpace.getNamespaceArray().length.should.eql(3);

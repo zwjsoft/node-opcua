@@ -12,6 +12,9 @@ var DataType            = opcua.DataType;
 var coerceLocalizedText = opcua.coerceLocalizedText;
 var StatusCodes         = opcua.StatusCodes;
 import UAStateMachine from "lib/address_space/state_machine/UAStateMachine";
+import UAObjectType from "lib/address_space/UAObjectType";
+import generateAddressSpace from "lib/address_space/generateAddressSpace";
+
 
 var doDebug = false;
 
@@ -28,7 +31,7 @@ describe("Testing Finite State Machine", function () {
                 // opcua.mini_nodeset_filename,
                 path.join(__dirname, "../../../test/fixtures/fixture_simple_statemachine_nodeset2.xml")
             ];
-            opcua.generate_address_space(addressSpace, xml_files, function (err) {
+            generateAddressSpace(addressSpace, xml_files, function (err) {
                 done(err);
             });
 
@@ -253,7 +256,6 @@ describe("Testing Finite State Machine", function () {
             var _ = require("underscore");
             require("requirish")._(module);
 
-            var UAObjectType = require("lib/address_space/ua_object_type").UAObjectType;
             var myFiniteStateMachine = addressSpace.addObjectType({
                 browseName: "MyFiniteStateMachine",
                 subtypeOf: "FiniteStateMachineType"

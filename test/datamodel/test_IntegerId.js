@@ -1,6 +1,5 @@
 require("requirish")._(module);
-
-var AccessLevelFlag = require("lib/datamodel/access_level").AccessLevelFlag;
+import accessLevelFlag from "lib/datamodel/access-level/accessLevelFlag";
 var should = require("should");
 var factories = require("lib/misc/factories");
 var encode_decode_round_trip_test = require("test/helpers/encode_decode_round_trip_test").encode_decode_round_trip_test;

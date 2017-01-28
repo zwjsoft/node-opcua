@@ -23,7 +23,7 @@ const Variant          = require("lib/datamodel/variant").Variant;
 const VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 const NodeId           = require("lib/datamodel/nodeid").NodeId;
 const NumericRange     = require("lib/datamodel/numeric_range").NumericRange;
-const AccessLevelFlag  = require("lib/datamodel/access_level").AccessLevelFlag;
+import  AccessLevelFlag from "lib/datamodel/access-level/accessLevelFlag";
 
 const LocalizedText       = require("lib/datamodel/localized_text").LocalizedText;
 const coerceLocalizedText = require("lib/datamodel/localized_text").coerceLocalizedText;
@@ -81,17 +81,17 @@ import ClientSession     from "lib/client/ClientSession";
 import OPCUAServer from "lib/server/OPCUAServer";
 import OPCUADiscoveryServer from "lib/server/OPCUADiscoveryServer";
 import ServerEngine from "lib/server/ServerEngine";
-const generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
+import generate_address_space from "lib/address_space/generateAddressSpace";
 import AddressSpace from "lib/address_space/AddressSpace";
 const ServerState        = require("schemas/39394884f696ff0bf66bacc9a8032cc074e0158e/ServerState_enum").ServerState;
 const SecurityPolicy     = require("lib/misc/security_policy").SecurityPolicy;
 const ServiceCounter     = require("_generated_/_auto_generated_ServiceCounter").ServiceCounter;
 // basic opcua NodeClass
-const UAObject  = require("lib/address_space/ua_object").UAObject;
-const UAMethod  = require("lib/address_space/ua_method").UAMethod;
+import UAObject from "lib/address_space/UAObject";
+import UAMethod  from "lib/address_space/UAMethod";
 import UAVariable from "lib/address_space/UAVariable";
 
-const UADataType= require("lib/address_space/ua_data_type").UADataType;
+import UADataType from "lib/address_space/UADataType";
 
 
 const AnonymousIdentityToken = session_service.AnonymousIdentityToken;
@@ -100,7 +100,7 @@ const UserNameIdentityToken = session_service.UserNameIdentityToken;
 //
 const MessageSecurityMode = get_endpoints_service.MessageSecurityMode;
 
-const makeRelativePath = require("lib/address_space/make_relative_path").makeRelativePath;
+import makeRelativePath from "lib/address_space/makeRelativePath";
 
 
 // DA

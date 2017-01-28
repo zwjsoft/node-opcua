@@ -8,14 +8,13 @@ var path = require("path");
 
 var async = require("async");
 
-var Method = require("lib/address_space/ua_method").Method;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 
 var DataType = require("lib/datamodel/variant").DataType;
 var AttributeIds = require("lib/services/read_service").AttributeIds;
 
 import AddressSpace from "lib/address_space/AddressSpace";
-var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
+import generateAddressSpace from "lib/address_space/generateAddressSpace";
 var coerceLocalizedText = require("lib/datamodel/localized_text").coerceLocalizedText;
 var NodeId = require("lib/datamodel/nodeid").NodeId;
 var DataType = require("lib/datamodel/variant").DataType;

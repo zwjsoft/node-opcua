@@ -2,14 +2,13 @@
 /* global describe,it,before*/
 require("requirish")._(module);
 var should = require("should");
-var Method = require("lib/address_space/ua_method").Method;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 
 var DataType = require("lib/datamodel/variant").DataType;
 var AttributeIds = require("lib/services/read_service").AttributeIds;
 import AddressSpace from "lib/address_space/AddressSpace";
 var _ = require("underscore");
-var generate_address_space = require("lib/address_space/load_nodeset2").generate_address_space;
+import generateAddressSpace from "lib/address_space/generateAddressSpace";
 var NodeId = require("lib/datamodel/nodeid").NodeId;
 
 import Enum from "lib/misc/enum";
@@ -30,7 +29,7 @@ describe("AddressSpace : add event type ", function () {
             var xml_file = path.join(__dirname, "../../lib/server/mini.Node.Set2.xml");
             require("fs").existsSync(xml_file).should.be.eql(true);
 
-            generate_address_space(addressSpace, xml_file, function (err) {
+            generateAddressSpace(addressSpace, xml_file, function (err) {
                 var eventType = addressSpace.addEventType({
                     browseName: "MyCustomEvent",
                     //isAbstract:false,
