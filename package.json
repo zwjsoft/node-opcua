@@ -13,7 +13,7 @@
     "postinstall": "node bin/crypto_create_CA.js demo --dev --silent",
     "pretest": "babel-node bin/crypto_create_CA.js demo --dev --silent",
     "test_with_trace": "mocha test --color -R spec --recursive --timeout 200000 --bail --compilers js:babel-core/register -r ./lib/misc/trace_console_log",
-    "test": "mocha test --color -R spec --recursive --timeout 200000 --bail --compilers js:babel-core/register",
+    "test": "npm run build && mocha test --color -R spec --recursive --timeout 200000 --bail --compilers js:babel-core/register",
     "lint": "eslint lib",
     "fix": "eslint --fix lib",
     "generate_doc": "make doc",
