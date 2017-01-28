@@ -1,5 +1,5 @@
-import {AttributeIds} from "lib/datamodel/attributeIds";
-import {is_valid_attributeId} from "lib/datamodel/attributeIds";
+import AttributeIds from "lib/datamodel/attribute-ids/AttributeIds";
+import is_valid_attributeId from "lib/datamodel/attribute-ids/is_valid_attributeId";
 
 require("lib/datamodel/numeric_range");
 

@@ -19,7 +19,7 @@ import SubscriptionState from "lib/server/SubscriptionState";
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 import Subscription from "lib/server/Subscription";
 import MonitoredItem from "lib/server/MonitoredItem";
-var AttributeIds = require("lib/datamodel/attributeIds").AttributeIds;
+import AttributeIds from "lib/datamodel/attribute-ids/AttributeIds";
 
 var fake_publish_engine = {};
 
