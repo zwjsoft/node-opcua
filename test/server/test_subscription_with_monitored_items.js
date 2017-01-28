@@ -26,7 +26,7 @@ var DataType = require("lib/datamodel/variant").DataType;
 var DataValue = require("lib/datamodel/datavalue").DataValue;
 var Variant = require("lib/datamodel/variant").Variant;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
-var AttributeIds = require("lib/datamodel/attributeIds").AttributeIds;
+import AttributeIds from "lib/datamodel/attribute-ids/AttributeIds";
 var NodeId = require("lib/datamodel/nodeid").NodeId;
 
 var resourceLeakDetector = require("test/helpers/resource_leak_detector").resourceLeakDetector;
