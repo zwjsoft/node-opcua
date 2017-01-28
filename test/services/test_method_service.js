@@ -15,8 +15,6 @@ import AddressSpace from "lib/address_space/AddressSpace";
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 import UAObject from "lib/address_space/UAObject";
 import UAMethod  from "lib/address_space/UAMethod";
-//xx var getMethodDeclaration_ArgumentList = require("lib/datamodel/argument_list").getMethodDeclaration_ArgumentList;
-//xx var Argument =require("lib/datamodel/argument_list").Argument;
 
 
 var should = require("should");
@@ -48,10 +46,8 @@ describe("testing CallMethodRequest", function () {
 
 });
 
-
-var build_retrieveInputArgumentsDefinition = require("lib/datamodel/argument_list").build_retrieveInputArgumentsDefinition;
-
-var convertJavaScriptToVariant = require("lib/datamodel/argument_list").convertJavaScriptToVariant;
+import build_retrieveInputArgumentsDefinition from "lib/datamodel/argument-list/build_retrieveInputArgumentsDefinition";
+import convertJavaScriptToVariant from "lib/datamodel/argument-list/convertJavaScriptToVariant";
 
 describe("CallMethodRequest with address space", function () {
 
