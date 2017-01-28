@@ -23,7 +23,7 @@ const Variant          = require("lib/datamodel/variant").Variant;
 const VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 const NodeId           = require("lib/datamodel/nodeid").NodeId;
 const NumericRange     = require("lib/datamodel/numeric_range").NumericRange;
-const AccessLevelFlag  = require("lib/datamodel/access_level").AccessLevelFlag;
+import  AccessLevelFlag from "lib/datamodel/access-level/accessLevelFlag";
 
 const LocalizedText       = require("lib/datamodel/localized_text").LocalizedText;
 const coerceLocalizedText = require("lib/datamodel/localized_text").coerceLocalizedText;
