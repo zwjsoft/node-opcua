@@ -7,7 +7,7 @@ import BaseNode from "lib/address_space/BaseNode";
 
 var should = require("should");
 var nodeid = require("lib/datamodel/nodeid");
-var AttributeIds = require("lib/datamodel/attributeIds").AttributeIds;
+import AttributeIds from "lib/datamodel/attribute-ids/AttributeIds";
 var DataType = require("lib/datamodel/variant").DataType;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 var browse_service = require("lib/services/browse_service");
