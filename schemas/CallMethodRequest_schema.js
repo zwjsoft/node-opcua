@@ -9,8 +9,8 @@ const decode_NodeId = _defaultTypeMap.NodeId.decode;
 assert(_.isFunction(encode_NodeId));
 assert(_.isFunction(decode_NodeId));
 
-import {decode_ArgumentList} from "lib/datamodel/argument_list";
-import {encode_ArgumentList} from "lib/datamodel/argument_list";
+import decode_ArgumentList from "lib/datamodel/argument-list/decode_ArgumentList";
+import encode_ArgumentList from "lib/datamodel/argument-list/encode_ArgumentList";
 
 const CallMethodRequest_Schema = {
     name: "CallMethodRequest",

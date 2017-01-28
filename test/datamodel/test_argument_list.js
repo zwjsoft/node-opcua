@@ -6,10 +6,11 @@ var opcua = require("../../");
 var DataType = opcua.DataType;
 
 var BinaryStream = require("lib/misc/binaryStream").BinaryStream;
-var decode_ArgumentList = require("lib/datamodel/argument_list").decode_ArgumentList;
-var encode_ArgumentList = require("lib/datamodel/argument_list").encode_ArgumentList;
-var binaryStoreSize_ArgumentList = require("lib/datamodel/argument_list").binaryStoreSize_ArgumentList;
-var convertJavaScriptToVariant = require("lib/datamodel/argument_list").convertJavaScriptToVariant;
+import decode_ArgumentList from "lib/datamodel/argument-list/decode_ArgumentList";
+import encode_ArgumentList from "lib/datamodel/argument-list/encode_ArgumentList";
+import binaryStoreSize_ArgumentList from "lib/datamodel/argument-list/binaryStoreSize_ArgumentList";
+import convertJavaScriptToVariant from "lib/datamodel/argument-list/convertJavaScriptToVariant";
+
 var Variant = require("lib/datamodel/variant").Variant;
 
 function extractValues(arrayVariant) {

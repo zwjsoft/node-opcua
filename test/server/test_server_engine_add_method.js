@@ -13,8 +13,8 @@ var NodeId = require("lib/datamodel/nodeid").NodeId;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 
 var engine, FolderTypeId, BaseDataVariableTypeId, ref_Organizes_Id;
+import getMethodDeclaration_ArgumentList from "lib/datamodel/argument-list/getMethodDeclaration_ArgumentList";
 
-var getMethodDeclaration_ArgumentList = require("lib/datamodel/argument_list").getMethodDeclaration_ArgumentList;
 import UAMethod  from "lib/address_space/UAMethod";
 var translate_service = require("lib/services/translate_browse_paths_to_node_ids_service");
 
