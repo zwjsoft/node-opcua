@@ -25,6 +25,7 @@ import ServerEngine from "lib/server/ServerEngine";
 
 var fs = require("fs");
 import generateAddressSpace from "lib/address_space/generateAddressSpace";
+import makeAccessLevel from "lib/datamodel/access-level/makeAccessLevel";
 
 
 import UADataType from "lib/address_space/UADataType";
@@ -248,8 +249,7 @@ it("should bind an xml-preloaded Extension Object Variable : ServerStatus ",func
     var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
     var write_service = require("lib/services/write_service");
     var WriteValue = write_service.WriteValue;
-    var makeAccessLevel = require("lib/datamodel/access_level").makeAccessLevel;
-
+    
     // now use WriteValue instead
     // make sure value is writable
     var rw = makeAccessLevel("CurrentRead | CurrentWrite");
