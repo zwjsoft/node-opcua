@@ -1,7 +1,7 @@
 import { registerEnumeration, registerObject } from "lib/misc/factories";
 
-var AccessLevelFlag = require("lib/datamodel/access_level").AccessLevelFlag;
-var makeAccessLevel = require("lib/datamodel/access_level").makeAccessLevel;
+import accessLevelFlag from "lib/datamodel/access-level/accessLevelFlag";
+import makeAccessLevel from "lib/datamodel/access-level/makeAccessLevel";
 var should = require("should");
 var findBuiltInType = require("lib/misc/factories_builtin_types").findBuiltInType;
 var assert = require("assert");
@@ -27,9 +27,9 @@ describe("Testing AccessLevelFlag", function () {
         makeAccessLevel("CurrentWrite | CurrentRead").value.should.equal(0x03);
 
 
-        AccessLevelFlag.get(0x1).key.should.eql("CurrentRead");
-        AccessLevelFlag.get(0x2).key.should.eql("CurrentWrite");
-        AccessLevelFlag.get(0x3).key.should.eql("CurrentRead | CurrentWrite");
+        accessLevelFlag.get(0x1).key.should.eql("CurrentRead");
+        accessLevelFlag.get(0x2).key.should.eql("CurrentWrite");
+        accessLevelFlag.get(0x3).key.should.eql("CurrentRead | CurrentWrite");
 
         makeAccessLevel(makeAccessLevel("CurrentRead")).value.should.equal(0x01);
     });
@@ -37,7 +37,7 @@ describe("Testing AccessLevelFlag", function () {
     it("should create a flag with no bit set", function () {
         var accessLevel = makeAccessLevel("");
         accessLevel.key.should.eql("NONE");
-        accessLevel.value.should.equal(AccessLevelFlag.NONE.value);
+        accessLevel.value.should.equal(accessLevelFlag.NONE.value);
         accessLevel.has("CurrentRead").should.eql(false);
         accessLevel.has("CurrentWrite").should.eql(false);
 
@@ -45,7 +45,7 @@ describe("Testing AccessLevelFlag", function () {
     it("should create a flag with no bit set -> 0", function () {
         var accessLevel = makeAccessLevel(0);
         accessLevel.key.should.eql("NONE");
-        accessLevel.value.should.equal(AccessLevelFlag.NONE.value);
+        accessLevel.value.should.equal(accessLevelFlag.NONE.value);
         accessLevel.has("CurrentRead").should.eql(false);
         accessLevel.has("CurrentWrite").should.eql(false);
 
@@ -57,7 +57,7 @@ describe("Testing AccessLevelFlag", function () {
     it("should create an object with access_level", function () {
         var o = new ObjWithAccessLevel();
         o.should.have.property("accessLevel");
-        o.accessLevel.should.eql(AccessLevelFlag.get("CurrentRead | CurrentWrite"));
+        o.accessLevel.should.eql(accessLevelFlag.get("CurrentRead | CurrentWrite"));
     });
 
     it("should create an object with access_level defined as a 'string'", function () {
@@ -66,7 +66,7 @@ describe("Testing AccessLevelFlag", function () {
             accessLevel: "HistoryWrite | SemanticChange"
         });
         o.should.have.property("accessLevel");
-        o.accessLevel.should.eql(AccessLevelFlag.get("HistoryWrite | SemanticChange"));
+        o.accessLevel.should.eql(accessLevelFlag.get("HistoryWrite | SemanticChange"));
 
     });
 
@@ -76,13 +76,13 @@ describe("Testing AccessLevelFlag", function () {
             accessLevel: 0x5
         });
         o.should.have.property("accessLevel");
-        o.accessLevel.should.eql(AccessLevelFlag.get("CurrentRead | HistoryRead"));
+        o.accessLevel.should.eql(accessLevelFlag.get("CurrentRead | HistoryRead"));
     });
 
     it("should persist a accessLevel Flag", function () {
 
         var o = new ObjWithAccessLevel({});
-        o.accessLevel.should.eql(AccessLevelFlag.get("CurrentRead | CurrentWrite"));
+        o.accessLevel.should.eql(accessLevelFlag.get("CurrentRead | CurrentWrite"));
 
         var encode_decode_round_trip_test = require("test/helpers/encode_decode_round_trip_test").encode_decode_round_trip_test;
         encode_decode_round_trip_test(o);

@@ -88,7 +88,7 @@ function _read_access_level(session,nodeId,attributeId,callback) {
     read_attribute(session,nodeId,attributeId,function (err,dataValue){
         var accessLevel = null;
         if (!err) {
-            accessLevel = AccessLevelFlag.get(dataValue.value.value);
+            accessLevel = accessLevelFlag.get(dataValue.value.value);
         }
         callback(err,accessLevel);
     });
