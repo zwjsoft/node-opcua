@@ -4,7 +4,7 @@ var should = require("should");
 
 var encode_decode_round_trip_test = require("test/helpers/encode_decode_round_trip_test").encode_decode_round_trip_test;
 
-var DiagnosticInfo = require("lib/datamodel/diagnostic_info").DiagnosticInfo;
+import DiagnosticInfo from "lib/datamodel/DiagnosticInfo";
 
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 
