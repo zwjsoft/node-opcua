@@ -1,6 +1,7 @@
 "use strict";
 require("requirish")._(module);
 
+import DataValue from "lib/datamodel/DataValue";
 import MonitoredItem from "lib/server/MonitoredItem";
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 var subscription_service = require("lib/services/subscription_service");
@@ -11,7 +12,6 @@ var read_service = require("lib/services/read_service");
 var TimestampsToReturn = read_service.TimestampsToReturn;
 
 var DataType = require("lib/datamodel/variant").DataType;
-var DataValue = require("lib/datamodel/datavalue").DataValue;
 var Variant = require("lib/datamodel/variant").Variant;
 
 var sinon = require("sinon");

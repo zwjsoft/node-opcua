@@ -2,7 +2,7 @@
 require("requirish")._(module);
 
 
-var DataValue = require("lib/datamodel/datavalue").DataValue;
+import DataValue from "lib/datamodel/DataValue";
 var Variant = require("lib/datamodel/variant").Variant;
 var DataType = require("lib/datamodel/variant").DataType;
 var NodeId = require("lib/datamodel/nodeid").NodeId;

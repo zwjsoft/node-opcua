@@ -13,6 +13,7 @@ var sinon = require("sinon");
 
 var subscription_service = require("lib/services/subscription_service");
 import SubscriptionState from "lib/server/SubscriptionState";
+import DataValue from "lib/datamodel/DataValue";
 
 
 
@@ -43,7 +44,6 @@ function reconstruct_fake_publish_engine() {
     };
 }
 
-var DataValue = require("lib/datamodel/datavalue").DataValue;
 var DataType = require("lib/datamodel/variant").DataType;
 var MonitoredItemCreateRequest = subscription_service.MonitoredItemCreateRequest;
 
@@ -343,7 +343,6 @@ describe("Subscriptions", function () {
     describe("T6 - a subscription shall send its first notification as soon as the publish request is available", function () {
         var TimestampsToReturn = require("lib/services/read_service").TimestampsToReturn;
         var DataType = require("lib/datamodel/variant").DataType;
-        var DataValue = require("lib/datamodel/datavalue").DataValue;
         var Variant = require("lib/datamodel/variant").Variant;
 
 

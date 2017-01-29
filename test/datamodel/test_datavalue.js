@@ -1,7 +1,11 @@
 "use strict";
 /* global describe,it*/
 require("requirish")._(module);
-var DataValue = require("lib/datamodel/datavalue").DataValue;
+import DataValue from "lib/datamodel/DataValue";
+import extractRange from "lib/datamodel/DataValue/extractRange";
+var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
+var NumericRange = require("lib/datamodel/numeric_range").NumericRange;
+
 var Variant = require("lib/datamodel/variant").Variant;
 var DataType = require("lib/datamodel/variant").DataType;
 
@@ -99,10 +103,7 @@ describe("DataValue", function () {
     });
 
 
-    var extractRange = require("lib/datamodel/datavalue").extractRange;
-    var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
-    var NumericRange = require("lib/datamodel/numeric_range").NumericRange;
-
+    
     it("DataValue - extractRange on a Float Array", function () {
 
         var dataValue = new DataValue({

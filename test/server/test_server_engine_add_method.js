@@ -3,9 +3,9 @@ var _ = require("underscore");
 var should = require("should");
 
 import ServerEngine, { mini_nodeset_filename } from "lib/server/ServerEngine";
+import DataValue from "lib/datamodel/DataValue";
 
 var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
-var DataValue = require("lib/datamodel/datavalue").DataValue;
 var Variant = require("lib/datamodel/variant").Variant;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 var DataType = require("lib/datamodel/variant").DataType;

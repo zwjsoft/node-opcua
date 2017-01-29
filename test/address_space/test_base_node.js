@@ -12,7 +12,7 @@ import UAVariable from "lib/address_space/UAVariable";
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 var DataType = require("lib/datamodel/variant").DataType;
 var Variant = require("lib/datamodel/variant").Variant;
-var DataValue = require("lib/datamodel/datavalue").DataValue;
+import DataValue from "lib/datamodel/DataValue";
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 var AttributeIds = require("lib/services/read_service").AttributeIds;
 var NodeClass = require("lib/datamodel/nodeclass").NodeClass;
