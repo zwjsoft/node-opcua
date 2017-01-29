@@ -1,13 +1,11 @@
-require("requirish")._(module);
-
-var should = require("should");
-var BinaryStream = require("lib/misc/binaryStream").BinaryStream;
-var factories = require("lib/misc/factories_factories");
-var hexDump = require("lib/misc/utils").hexDump;
-var assert_arrays_are_equal = require("test/helpers/typedarray_helpers").assert_arrays_are_equal;
-var _ = require("underscore");
-
-var packet_analyzer = require("lib/misc/packet_analyzer").packet_analyzer;
+import _  from "underscore";
+import should from "should";
+import {BinaryStream} from "lib/misc/binaryStream";
+import {constructObject} from "lib/misc/factories_factories";
+import {hexDump} from "lib/misc/utils";
+import {assert_arrays_are_equal} from "test/helpers/typedarray_helpers";
+import {packet_analyzer} from "lib/misc/packet_analyzer";
+import {analyze_object_binary_encoding} from "lib/misc/packet_analyzer";
 
 //xx process.argv.push("DEBUG");
 
@@ -18,30 +16,29 @@ function dump_block_in_debug_mode(buffer, id, options) {
         packet_analyzer(buffer, id, 0, 0, options);
     }
 }
+
 function isTypedArray(v) {
-    if (v && v.buffer && v.buffer instanceof ArrayBuffer) {
-        return true;
-    }
-    return false;
+    return (v && v.buffer && v.buffer instanceof ArrayBuffer);
 }
+
 function isArrayOrTypedArray(v) {
     return isTypedArray(v) || v instanceof Array;
 }
 
-function compare(obj_reloaded,obj) {
-    Object.keys(obj_reloaded).forEach(function (p) {
+function compare(reloadedObject, obj) {
+    Object.keys(reloadedObject).forEach(function (p) {
 
         try {
             if (isArrayOrTypedArray(obj[p])) {
-                assert_arrays_are_equal(obj_reloaded[p], obj[p]);
+                assert_arrays_are_equal(reloadedObject[p], obj[p]);
             } else {
-                JSON.stringify(obj_reloaded[p]).should.eql(JSON.stringify(obj[p]));
+                JSON.stringify(reloadedObject[p]).should.eql(JSON.stringify(obj[p]));
             }
         } catch (err) {
-            console.log(" ---------------------------------- error in encode_decode_round_trip_test".yellow);
+            console.log(" ---------------------------------- error in encodeDecodeRoundTripTest".yellow);
             console.log(" key ".red, p);
             console.log(" expected ".red, JSON.stringify(obj[p]));
-            console.log(" actual   ".cyan, JSON.stringify(obj_reloaded[p]));
+            console.log(" actual   ".cyan, JSON.stringify(reloadedObject[p]));
             // re throw exception
             throw err;
         }
@@ -58,7 +55,7 @@ function compare(obj_reloaded,obj) {
  * @param callback_buffer
  * @return {*}
  */
-function encode_decode_round_trip_test(obj, options, callback_buffer) {
+function encodeDecodeRoundTripTest(obj, options, callback_buffer) {
 
     if (!callback_buffer && _.isFunction(options)) {
         callback_buffer = options;
@@ -69,11 +66,11 @@ function encode_decode_round_trip_test(obj, options, callback_buffer) {
 
     should.exist(obj);
 
-    var expandedNodeId = obj.encodingDefaultBinary;
+    const expandedNodeId = obj.encodingDefaultBinary;
 
-    var size = obj.binaryStoreSize(options);
+    const size = obj.binaryStoreSize(options);
 
-    var stream = new BinaryStream(new Buffer(size));
+    const stream = new BinaryStream(new Buffer(size));
 
     obj.encode(stream, options);
 
@@ -81,57 +78,63 @@ function encode_decode_round_trip_test(obj, options, callback_buffer) {
 
     stream.rewind();
 
-    var obj_reloaded = factories.constructObject(expandedNodeId);
+    const obj_reloaded = constructObject(expandedNodeId);
     obj_reloaded.decode(stream, options);
 
 
     function redirectToNull(functor) {
-        var old = console.log;
+        const old = console.log;
 
-        console.log = function () { };
+        console.log = function () {
+        };
 
         try {
             functor();
         }
-        catch(err) {
+        catch (err) {
             throw err;
         }
-        finally  {
+        finally {
             console.log = old;
         }
 
     }
 
-    var analyze_object_binary_encoding = require("lib/misc/packet_analyzer").analyze_object_binary_encoding;
     redirectToNull(function () {
         analyze_object_binary_encoding(obj);
     });
 
-    compare(obj_reloaded,obj);
+    compare(obj_reloaded, obj);
 
     return obj_reloaded;
 }
-exports.encode_decode_round_trip_test = encode_decode_round_trip_test;
 
 
-function json_encode_decode_round_trip_test(obj, options, callback_buffer) {
-    if (!callback_buffer && _.isFunction(options)) {
-        callback_buffer = options;
+function json_encode_decode_round_trip_test(obj, options, callbackBuffer) {
+
+    if (!callbackBuffer && _.isFunction(options)) {
+        callbackBuffer = options;
         options = {};
     }
-    callback_buffer = callback_buffer || dump_block_in_debug_mode;
+    callbackBuffer = callbackBuffer || dump_block_in_debug_mode;
 
     should.exist(obj);
 
-    var json =    JSON.stringify(obj);
+    const json = JSON.stringify(obj);
 
-    var obj_reloaded = JSON.parse(json);
+    const obj_reloaded = JSON.parse(json);
 
     //xx console.log(json);
 
-    compare(obj_reloaded,obj);
+    compare(obj_reloaded, obj);
 
     return obj_reloaded;
 
 }
-exports.json_encode_decode_round_trip_test =  json_encode_decode_round_trip_test;
+
+
+export {
+    encodeDecodeRoundTripTest as encode_decode_round_trip_test,
+    json_encode_decode_round_trip_test
+};
+

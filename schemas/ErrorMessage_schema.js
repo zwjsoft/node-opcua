@@ -1,8 +1,8 @@
-import { next_available_id } from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 const ErrorMessage_Schema = {
     name: "ErrorMessage",
-    id: next_available_id(),
+    id: nextAvailableId(),
     fields: [
         {
             name: "Error",

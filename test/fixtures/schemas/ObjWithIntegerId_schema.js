@@ -1,9 +1,9 @@
 require("requirish")._(module);
-var factories = require("lib/misc/factories");
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 var ObjWithIntegerId_Schema = {
 
-    id: factories.next_available_id(),
+    id: nextAvailableId(),
     name: "ObjWithIntegerId",
     fields: [
         {name: "title", fieldType: "UAString"},

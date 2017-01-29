@@ -1,5 +1,5 @@
-import { registerObject } from "lib/misc/factories";
-import createObject from "lib/misc/create-factory";
+import {registerObject} from "lib/misc/factories";
+import  createObject from "lib/misc/create-factory";
 
 
 import { 

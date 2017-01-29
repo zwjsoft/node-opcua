@@ -1,10 +1,8 @@
-import {
-  next_available_id,
-  registerEnumeration
-} from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
+import {registerEnumeration} from "lib/misc/factories";
 
 const Person_Schema = {
-  id: next_available_id(),
+    id: nextAvailableId(),
   name: "Person",
   fields: [
     { name: "lastName", fieldType: "UAString" },
@@ -13,7 +11,7 @@ const Person_Schema = {
   ]
 };
 const Role_Schema = {
-  id: next_available_id(),
+    id: nextAvailableId(),
   name: "Role",
   fields: [
     { name: "title", fieldType: "UAString" },
@@ -22,7 +20,7 @@ const Role_Schema = {
 };
 
 const Employee_Schema = {
-  id: next_available_id(),
+    id: nextAvailableId(),
   name: "Employee",
   baseType: "Person",
   fields: [
@@ -33,7 +31,7 @@ const Employee_Schema = {
 };
 
 const Company_Schema = {
-  id: next_available_id(),
+    id: nextAvailableId(),
   name: "Company",
   fields: [
     { name: "name", fieldType: "String" },
@@ -62,7 +60,7 @@ const Color = registerEnumeration({
 });
 
 const Shape_Schema = {
-  id: next_available_id(),
+    id: nextAvailableId(),
   name: "Shape",
   fields: [
     {
@@ -82,21 +80,21 @@ const Shape_Schema = {
 
 const MyStruct_Schema = {
   name: "MyStruct",
-  id: next_available_id(),
+    id: nextAvailableId(),
   fields: [
     { name: "value", fieldType: "MyInteger" }
   ]
 };
 const MyStruct2_Schema = {
   name: "MyStruct2",
-  id: next_available_id(),
+    id: nextAvailableId(),
   fields: [
     { name: "value", fieldType: "MyInteger" },
     { name: "statusCode", fieldType: "StatusCode" }
   ]
 };
 const FakeBlob_Schema = {
-  id: next_available_id(),
+    id: nextAvailableId(),
   name: "FakeBlob",
   fields: [
     { name: "name", fieldType: "String" },
@@ -105,7 +103,7 @@ const FakeBlob_Schema = {
   ]
 };
 const FakeBlob2_Schema = {
-  id: next_available_id(),
+    id: nextAvailableId(),
   name: "FakeBlob2",
   fields: [
     { name: "name", fieldType: "String" },
@@ -116,7 +114,7 @@ const FakeBlob2_Schema = {
 };
 
 const FakeBlob3_Schema = {
-  id: next_available_id(),
+    id: nextAvailableId(),
   name: "FakeBlob3",
   fields: [
     { name: "name", fieldType: "String" },
@@ -126,7 +124,7 @@ const FakeBlob3_Schema = {
 };
 const FakeQualifiedName_Schema = {
   name: "FakeQualifiedName",
-  id: next_available_id(),
+    id: nextAvailableId(),
   fields: [
     { name: "namespaceIndex", fieldType: "UInt16", documentation: "The namespace index" },
     {
@@ -143,14 +141,14 @@ const FakeQualifiedName_Schema = {
 
 const Blob4_Schema = {
   name: "Blob4",
-  id: next_available_id(),
+    id: nextAvailableId(),
   fields: [
     { name: "createdOn", fieldType: "DateTime", defaultValue: null }
   ]
 };
 const Blob6_Schema = {
   name: "Blob6",
-  id: next_available_id(),
+    id: nextAvailableId(),
   fields: []
 };
 

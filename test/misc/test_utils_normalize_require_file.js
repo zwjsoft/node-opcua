@@ -1,14 +1,10 @@
-require("requirish")._(module);
+import  should from "should";
+import {normalizeRequireFile} from "lib/misc/utils";
 
+describe("normalizeRequireFile", function () {
 
-var should = require("should");
-var normalize_require_file = require("lib/misc/utils").normalize_require_file;
-
-describe("normalize_require_file", function () {
-
-    it("should normalize_require_file", function () {
-        normalize_require_file("/home/bob/folder1/", "/home/bob/folder1/folder2/toto.js").
-            should.eql("./folder2/toto");
+    it("should normalizeRequireFile", function () {
+        normalizeRequireFile("/home/bob/folder1/", "/home/bob/folder1/folder2/toto.js").should.eql("./folder2/toto");
     });
 
 });

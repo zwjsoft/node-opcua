@@ -1,8 +1,8 @@
-import { next_available_id } from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 const HelloMessage_Schema = {
     name: "HelloMessage",
-    id: next_available_id(),
+    id: nextAvailableId(),
     fields: [
         {
             name: "protocolVersion",

@@ -3,25 +3,25 @@ require("requirish")._(module);
 /**
  * @module opcua.address_space.types
  */
-var assert = require("better-assert");
-var util = require("util");
-var _ = require("underscore");
-var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
-var schema_helpers = require("lib/misc/factories_schema_helpers");
-var extract_all_fields = schema_helpers.extract_all_fields;
-var resolve_schema_field_types = schema_helpers.resolve_schema_field_types;
-var initialize_field = schema_helpers.initialize_field;
-var initialize_field_array = schema_helpers.initialize_field_array;
-var check_options_correctness_against_schema = schema_helpers.check_options_correctness_against_schema;
-var _defaultTypeMap = require("lib/misc/factories_builtin_types")._defaultTypeMap;
-var ec = require("lib/misc/encode_decode");
-var encodeArray = ec.encodeArray;
-var decodeArray = ec.decodeArray;
-var makeExpandedNodeId = ec.makeExpandedNodeId;
-var generate_new_id = require("lib/misc/factories").generate_new_id;
-var _enumerations = require("lib/misc/factories_enumerations")._private._enumerations;
-var schema = require("schemas/Variant_schema").Variant_Schema;
-var BaseUAObject = require("lib/misc/factories_baseobject").BaseUAObject;
+const assert = require("better-assert");
+const util = require("util");
+const _ = require("underscore");
+const makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
+const schema_helpers = require("lib/misc/factories_schema_helpers");
+const extractAllFields = schema_helpers.extractAllFields;
+const resolveSchemaFieldTypes = schema_helpers.resolveSchemaFieldTypes;
+const initializeField = schema_helpers.initializeField;
+const initializeField_array = schema_helpers.initializeFieldArray;
+const checkOptionsCorrectnessAgainstSchema = schema_helpers.checkOptionsCorrectnessAgainstSchema;
+const _defaultTypeMap = require("lib/misc/factories_builtin_types")._defaultTypeMap;
+const ec = require("lib/misc/encode_decode");
+const encodeArray = ec.encodeArray;
+const decodeArray = ec.decodeArray;
+const makeExpandedNodeId = ec.makeExpandedNodeId;
+const generateNewId = require("lib/misc/factoryIdGenerator").generateNewId;
+const _enumerations = require("lib/misc/factories_enumerations")._private._enumerations;
+const schema = require("schemas/Variant_schema").Variant_Schema;
+const BaseUAObject = require("lib/misc/factories_baseobject").BaseUAObject;
 
 /**
  * @class Variant
@@ -30,17 +30,17 @@ var BaseUAObject = require("lib/misc/factories_baseobject").BaseUAObject;
  */
 function Variant(options) {
     options = options || {};
-    check_options_correctness_against_schema(this, schema, options);
-    var self = this;
+    checkOptionsCorrectnessAgainstSchema(this, schema, options);
+    const self = this;
     assert(this instanceof BaseUAObject); //  ' keyword "new" is required for constructor call')
-    resolve_schema_field_types(schema);
+    resolveSchemaFieldTypes(schema);
 
     //construction hook
     options = schema.construct_hook(options);
     BaseUAObject.call(this, options);
 
     /**
-     * the variant type.
+     * the Variant type.
      * @property dataType
      * @type {DataType}
      * @default  0
@@ -55,7 +55,7 @@ function Variant(options) {
                 return this.__dataType;
             },
             set: function (value) {
-                var coercedValue = _enumerations.DataType.typedEnum.get(value);
+                const coercedValue = _enumerations.DataType.typedEnum.get(value);
                 if (coercedValue === undefined || coercedValue === null) {
                     throw new Error("value cannot be coerced to DataType: " + value);
                 }
@@ -68,7 +68,7 @@ function Variant(options) {
             enumerable: false
         }
     });
-    self.dataType = initialize_field(schema.fields[0], options.dataType);
+    self.dataType = initializeField(schema.fields[0], options.dataType);
 
     /**
      * @property arrayType
@@ -85,7 +85,7 @@ function Variant(options) {
                 return this.__arrayType;
             },
             set: function (value) {
-                var coercedValue = _enumerations.VariantArrayType.typedEnum.get(value);
+                const coercedValue = _enumerations.VariantArrayType.typedEnum.get(value);
                 if (coercedValue === undefined || coercedValue === null) {
                     throw new Error("value cannot be coerced to VariantArrayType: " + value);
                 }
@@ -98,28 +98,28 @@ function Variant(options) {
             enumerable: false
         }
     });
-    self.arrayType = initialize_field(schema.fields[1], options.arrayType);
+    self.arrayType = initializeField(schema.fields[1], options.arrayType);
 
     /**
      * @property value
      * @type {Any}
      * @default  null
      */
-    self.value = initialize_field(schema.fields[2], options.value);
+    self.value = initializeField(schema.fields[2], options.value);
 
     // Object.preventExtensions(self);
 }
 util.inherits(Variant, BaseUAObject);
-schema.id = generate_new_id();
+schema.id = generateNewId();
 Variant.prototype.encodingDefaultBinary = makeExpandedNodeId(schema.id);
 Variant.prototype._schema = schema;
 
-var encode_DataType = _enumerations.DataType.encode;
-var decode_DataType = _enumerations.DataType.decode;
-var encode_VariantArrayType = _enumerations.VariantArrayType.encode;
-var decode_VariantArrayType = _enumerations.VariantArrayType.decode;
-var encode_Any = _defaultTypeMap.Any.encode;
-var decode_Any = _defaultTypeMap.Any.decode;
+const encodeDataType = _enumerations.DataType.encode;
+const decode_DataType = _enumerations.DataType.decode;
+const encode_VariantArrayType = _enumerations.VariantArrayType.encode;
+const decode_VariantArrayType = _enumerations.VariantArrayType.decode;
+const encode_Any = _defaultTypeMap.Any.encode;
+const decodeAny = _defaultTypeMap.Any.decode;
 Variant.prototype.encode = function (stream, options) {
     schema.encode(this, stream, options);
 };
@@ -155,5 +155,5 @@ Variant.possibleFields = function () {
 
 
 exports.Variant = Variant;
-//var register_class_definition = require("lib/misc/factories_factories").register_class_definition;
+//const register_class_definition = require("lib/misc/factories_factories").register_class_definition;
 //register_class_definition("Variant",Variant);

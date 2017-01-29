@@ -1,7 +1,5 @@
-import {
-    next_available_id,
-    findBuiltInType
-} from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
+import {findBuiltInType} from "lib/misc/factories";
 
 import * as ec from "lib/misc/encode_decode";
 import assert from "better-assert";
@@ -223,7 +221,7 @@ function encodeDimension(dimensions, stream) {
 
 const Variant_Schema = {
     name: "Variant",
-    id: next_available_id(),
+    id: nextAvailableId(),
     fields: [{
         name: "dataType",
         fieldType: "DataType",

@@ -1,11 +1,11 @@
-import { next_available_id } from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 // OPC UA Secure Conversation Message Header : Part 6 page 36
 
 //Asymmetric algorithms are used to secure the OpenSecureChannel messages.
 const AsymmetricAlgorithmSecurityHeader_Schema = {
     name: "AsymmetricAlgorithmSecurityHeader",
-    id: next_available_id(),
+    id: nextAvailableId(),
     fields: [
         // length shall not exceed 256
         // The URI of the security policy used to secure the message.

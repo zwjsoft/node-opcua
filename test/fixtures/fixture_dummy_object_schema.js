@@ -1,7 +1,5 @@
-import {
-  registerEnumeration,
-  next_available_id
-} from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
+import {registerEnumeration} from "lib/misc/factories";
 
 var SomeEnumeration = registerEnumeration({
   name: "SomeEnumeration",
@@ -18,7 +16,7 @@ var FooBar_Schema = {
   name: "FooBar",
   documentation: 'A FOOBAR Object.',
 
-  id: next_available_id(),
+    id: nextAvailableId(),
   fields: [
     { name: "name", fieldType: "String", documentation: "The name." }
   ]
@@ -28,7 +26,7 @@ var FooBarDerived_Schema = {
   name: "FooBarDerived",
   documentation: 'A FOOBAR Derived Object.',
   baseType: "FooBar",
-  id: next_available_id(),
+    id: nextAvailableId(),
   fields: [
     { name: "name2", fieldType: "String", documentation: "The second name." }
   ]
@@ -39,7 +37,7 @@ var DummyObject_Schema = {
   name: "DummyObject",
   documentation: 'A dummy Object.',
 
-  id: next_available_id(),
+    id: nextAvailableId(),
   fields: [
     { name: "name", fieldType: "String", documentation: "The name." },
     { name: "viewId", fieldType: "NodeId", documentation: "The node id of the view." },

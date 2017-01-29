@@ -1,5 +1,5 @@
 require("requirish")._(module);
-// --------- This code has been automatically generated !!! Wed Apr 29 2015 20:52:17 GMT+0200 (Paris, Madrid (heure dété))
+// --------- This code has been automatically generated !!! Wed Apr 29 2015 20:52:17 GMT+0200 (Paris, Madrid (heure dï¿½tï¿½))
 /**
  * @module opcua.address_space.types
  */
@@ -8,17 +8,17 @@ var util = require("util");
 var _ = require("underscore");
 var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
 var schema_helpers = require("lib/misc/factories_schema_helpers");
-var extract_all_fields = schema_helpers.extract_all_fields;
-var resolve_schema_field_types = schema_helpers.resolve_schema_field_types;
-var initialize_field = schema_helpers.initialize_field;
-var initialize_field_array = schema_helpers.initialize_field_array;
-var check_options_correctness_against_schema = schema_helpers.check_options_correctness_against_schema;
+var extractAllFields = schema_helpers.extractAllFields;
+var resolveSchemaFieldTypes = schema_helpers.resolveSchemaFieldTypes;
+var initializeField = schema_helpers.initializeField;
+var initializeField_array = schema_helpers.initializeField_array;
+var checkOptionsCorrectnessAgainstSchema = schema_helpers.checkOptionsCorrectnessAgainstSchema;
 var _defaultTypeMap = require("lib/misc/factories_builtin_types")._defaultTypeMap;
 var ec = require("lib/misc/encode_decode");
 var encodeArray = ec.encodeArray;
 var decodeArray = ec.decodeArray;
 var makeExpandedNodeId = ec.makeExpandedNodeId;
-var generate_new_id = require("lib/misc/factories").generate_new_id;
+var generateNewId = require("lib/misc/factoryIdGenerator").generateNewId;
 var _enumerations = require("lib/misc/factories_enumerations")._private._enumerations;
 var schema = require("schemas/Variant_schema").Variant_Schema;
 var BaseUAObject = require("lib/misc/factories_baseobject").BaseUAObject;
@@ -80,10 +80,10 @@ var _enum_properties = {
  */
 function Variant(options) {
     options = options || {};
-    check_options_correctness_against_schema(this, schema, options);
+    checkOptionsCorrectnessAgainstSchema(this, schema, options);
     var self = this;
     assert(this instanceof BaseUAObject); //  ' keyword "new" is required for constructor call')
-    resolve_schema_field_types(schema);
+    resolveSchemaFieldTypes(schema);
 
     //construction hook
     options = schema.construct_hook(options);
@@ -98,7 +98,7 @@ function Variant(options) {
      * @type {DataType}
      * @default  0
      */
-    self.dataType = initialize_field(schema.fields[0], options.dataType);
+    self.dataType = initializeField(schema.fields[0], options.dataType);
 
     /**
      *
@@ -106,7 +106,7 @@ function Variant(options) {
      * @type {VariantArrayType}
      * @default  0
      */
-    self.arrayType = initialize_field(schema.fields[1], options.arrayType);
+    self.arrayType = initializeField(schema.fields[1], options.arrayType);
 
     /**
      *
@@ -114,21 +114,21 @@ function Variant(options) {
      * @type {Any}
      * @default  null
      */
-    self.value = initialize_field(schema.fields[2], options.value);
+    self.value = initializeField(schema.fields[2], options.value);
 
     // Object.preventExtensions(self);
 }
 util.inherits(Variant, BaseUAObject);
-schema.id = generate_new_id();
+schema.id = generateNewId();
 Variant.prototype.encodingDefaultBinary = makeExpandedNodeId(schema.id);
 Variant.prototype._schema = schema;
 
-var encode_DataType = _enumerations.DataType.encode;
+var encodeDataType = _enumerations.DataType.encode;
 var decode_DataType = _enumerations.DataType.decode;
 var encode_VariantArrayType = _enumerations.VariantArrayType.encode;
 var decode_VariantArrayType = _enumerations.VariantArrayType.decode;
 var encode_Any = _defaultTypeMap.Any.encode;
-var decode_Any = _defaultTypeMap.Any.decode;
+var decodeAny = _defaultTypeMap.Any.decode;
 Variant.prototype.encode = function (stream, options) {
     schema.encode(this, stream, options);
 };

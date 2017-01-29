@@ -1,4 +1,4 @@
-import { next_available_id } from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 import * as ec from "lib/misc/encode_decode";
 import assert from "better-assert";
 
@@ -16,7 +16,7 @@ function getLocalizeText_EncodingByte(localizedText) {
 // see Part 3 - $8.5 page 63
 const LocalizedText_Schema = {
     name: "LocalizedText",
-    id: next_available_id(),
+    id: nextAvailableId(),
     fields: [
         { name: "text", fieldType: "String", defaultValue : function () { return null; } },
         { name: "locale", fieldType: "LocaleId" }

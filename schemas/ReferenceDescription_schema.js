@@ -1,12 +1,11 @@
-
-import { next_available_id } from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 import {NodeClass} from "schemas/NodeClass_enum";
 import {resolveNodeId} from "lib/datamodel/nodeid";
 const ReferenceDescription_Schema = {
     name: "ReferenceDescription",
     documentation: "The description of a reference.",
-    id: next_available_id(),
+    id: nextAvailableId(),
     fields: [
         {name: "referenceTypeId", fieldType: "NodeId",         documentation: "The type of references."},
         {name: "isForward",       fieldType: "Boolean",        documentation: "TRUE if the reference is a forward reference."},
