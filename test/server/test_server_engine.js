@@ -9,7 +9,7 @@ import ServerEngine, {
 import DataValue from "lib/datamodel/DataValue";
 
 var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
-var NodeClass = require("lib/datamodel/nodeclass").NodeClass;
+import NodeClass from "lib/datamodel/NodeClass"
 var browse_service = require("lib/services/browse_service");
 var BrowseDirection = browse_service.BrowseDirection;
 var read_service = require("lib/services/read_service");

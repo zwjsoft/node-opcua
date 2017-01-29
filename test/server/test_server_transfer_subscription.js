@@ -26,7 +26,7 @@ var DataType = require("lib/datamodel/variant").DataType;
 var Variant = require("lib/datamodel/variant").Variant;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
-var NodeClass = require("lib/datamodel/nodeclass").NodeClass;
+import NodeClass from "lib/datamodel/NodeClass"
 var BrowseDirection = browse_service.BrowseDirection;
 var server_NamespaceArray_Id = makeNodeId(VariableIds.Server_NamespaceArray); // ns=0;i=2255
 

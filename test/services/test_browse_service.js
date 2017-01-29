@@ -117,7 +117,7 @@ describe("Browse Service", function () {
 
             var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
             var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
-            var NodeClass = require("lib/datamodel/nodeclass").NodeClass;
+            import NodeClass from "lib/datamodel/NodeClass"
 
 
             var ref = new browse_service.ReferenceDescription({
@@ -149,7 +149,7 @@ describe("Browse Service", function () {
 
             var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
             var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
-            var NodeClass = require("lib/datamodel/nodeclass").NodeClass;
+            import NodeClass from "lib/datamodel/NodeClass"
 
             var ref = new browse_service.ReferenceDescription({
                 referenceTypeId: "ns=1;i=10",

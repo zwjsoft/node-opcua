@@ -5,7 +5,7 @@ require("requirish")._(module);
 var should = require("should");
 
 import ServerEngine from "lib/server/ServerEngine";
-var NodeClass = require("lib/datamodel/nodeclass").NodeClass;
+import NodeClass from "lib/datamodel/NodeClass"
 
 var DataType = require("lib/datamodel/variant").DataType;
 var Variant = require("lib/datamodel/variant").Variant;

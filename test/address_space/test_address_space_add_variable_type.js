@@ -9,7 +9,7 @@ var path = require("path");
 
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 import UAObjectType from "lib/address_space/UAObjectType";
-var NodeClass = require("lib/datamodel/nodeclass").NodeClass;
+import NodeClass from "lib/datamodel/NodeClass"
 var DataType = require("lib/datamodel/variant").DataType;
 var AttributeIds = require("lib/services/read_service").AttributeIds;
 import AddressSpace from "lib/address_space/AddressSpace";
