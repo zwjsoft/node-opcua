@@ -8,7 +8,7 @@ var AttributeIds = require("lib/services/read_service").AttributeIds;
 import AddressSpace from "lib/address_space/AddressSpace";
 var _ = require("underscore");
 import generateAddressSpace from "lib/address_space/generateAddressSpace";
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId from "lib/datamodel/NodeId";
 
 import UADataType from "lib/address_space/UADataType";
 import UAObject from "lib/address_space/UAObject";

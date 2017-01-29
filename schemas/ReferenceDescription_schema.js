@@ -1,7 +1,7 @@
 import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 import {NodeClass} from "schemas/NodeClass_enum";
-import {resolveNodeId} from "lib/datamodel/nodeid";
+import { resolveNodeId } from "lib/datamodel/NodeId";
 const ReferenceDescription_Schema = {
     name: "ReferenceDescription",
     documentation: "The description of a reference.",

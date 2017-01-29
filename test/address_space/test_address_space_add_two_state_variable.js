@@ -14,7 +14,7 @@ var DataType = require("lib/datamodel/variant").DataType;
 var AttributeIds = require("lib/services/read_service").AttributeIds;
 import AddressSpace from "lib/address_space/AddressSpace";
 import generateAddressSpace from "lib/address_space/generateAddressSpace";
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId from "lib/datamodel/NodeId";
 var sinon = require('sinon');
 
 describe("testing add TwoStateVariable ", function () {

@@ -16,7 +16,7 @@ var AttributeIds = require("lib/services/read_service").AttributeIds;
 import AddressSpace from "lib/address_space/AddressSpace";
 import generateAddressSpace from "lib/address_space/generateAddressSpace";
 import LocalizedText, { coerceLocalizedText } from "lib/datamodel/LocalizedText";
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId from "lib/datamodel/NodeId";
 var DataType = require("lib/datamodel/variant").DataType;
 var Variant = require("lib/datamodel/variant").Variant;
 import ConditionSnapshot from "lib/address_space/alarms_and_conditions/ConditionSnapshot";

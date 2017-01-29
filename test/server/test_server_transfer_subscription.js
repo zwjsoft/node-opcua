@@ -7,7 +7,7 @@ var browse_service = require("lib/services/browse_service");
 var read_service = require("lib/services/read_service");
 var subscription_service = require("lib/services/subscription_service");
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
-var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
+import { makeNodeId } from "lib/datamodel/NodeId";
 var VariableIds = require("lib/opcua_node_ids").VariableIds;
 import SubscriptionState from "lib/server/SubscriptionState";
 var PublishRequest = subscription_service.PublishRequest;
@@ -20,12 +20,11 @@ var sinon = require("sinon");
 
 
 var TimestampsToReturn = read_service.TimestampsToReturn;
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId, { resolveNodeId} from "lib/datamodel/NodeId";
 var AttributeIds = read_service.AttributeIds;
 var DataType = require("lib/datamodel/variant").DataType;
 var Variant = require("lib/datamodel/variant").Variant;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
-var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
 import NodeClass from "lib/datamodel/NodeClass"
 var BrowseDirection = browse_service.BrowseDirection;
 var server_NamespaceArray_Id = makeNodeId(VariableIds.Server_NamespaceArray); // ns=0;i=2255

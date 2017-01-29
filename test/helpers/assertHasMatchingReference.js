@@ -2,7 +2,7 @@ var assert = require("better-assert");
 require("requirish")._(module);
 
 import Reference from "lib/address_space/Reference";
-var sameNodeId = require("lib/datamodel/nodeid").sameNodeId;
+import { sameNodeId } from "lib/datamodel/NodeId";
 
 /**
  * asserts that the provided reference exists in the node references

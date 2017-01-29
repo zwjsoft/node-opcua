@@ -1,20 +1,19 @@
 require("requirish")._(module);
 var should = require("should");
 import ServerEngine , { mini_nodeset_filename } from "lib/server/ServerEngine";
-var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
 import NodeClass from "lib/datamodel/NodeClass"
 var browse_service = require("lib/services/browse_service");
 var BrowseDirection = browse_service.BrowseDirection;
 var read_service = require("lib/services/read_service");
 var TimestampsToReturn = read_service.TimestampsToReturn;
 var util = require("util");
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId, { resolveNodeId } from "lib/datamodel/NodeId";
 var assert = require("better-assert");
 var AttributeIds = read_service.AttributeIds;
 
 var DataType = require("lib/datamodel/variant").DataType;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
-var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
+import { makeNodeId } from "lib/datamodel/NodeId";
 var VariableIds = require("lib/opcua_node_ids").VariableIds;
 var Variant = require("lib/datamodel/variant").Variant;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;

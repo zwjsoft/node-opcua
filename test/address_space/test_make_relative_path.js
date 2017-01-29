@@ -4,10 +4,11 @@ var should = require("should");
 
 
 import ServerEngine from "lib/server/ServerEngine";
-
-var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
-var coerceNodeId =  require("lib/datamodel/nodeid").coerceNodeId;
-var makeNodeId   =  require("lib/datamodel/nodeid").makeNodeId;
+import {
+    resolveNodeId,
+    coerceNodeId,
+    makeNodeId
+} from "lib/datamodel/NodeId";
 var QualifiedName = require("lib/datamodel/qualified_name").QualifiedName;
 
 import makeRelativePath from "lib/address_space/makeRelativePath";

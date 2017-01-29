@@ -1,4 +1,7 @@
 require("requirish")._(module);
+import NodeClass from "lib/datamodel/NodeClass"
+import { makeNodeId } from "lib/datamodel/NodeId";
+
 var encode_decode_round_trip_test = require("test/helpers/encode_decode_round_trip_test").encode_decode_round_trip_test;
 var verify_multi_chunk_message = require("test/helpers/verify_message_chunk").verify_multi_chunk_message;
 
@@ -65,8 +68,7 @@ describe("Browse Service", function () {
 
     it("should construct a BrowseDescription", function () {
 
-        var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
-
+        
         var browseDescription = new browse_service.BrowseDescription({
             browseDirection: browse_service.BrowseDirection.Both,
             referenceTypeId: makeNodeId(12),
@@ -116,9 +118,8 @@ describe("Browse Service", function () {
         redirectToFile('ReferenceDescription_to_json.log', function () {
 
             var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
-            var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
-            import NodeClass from "lib/datamodel/NodeClass"
-
+            
+            
 
             var ref = new browse_service.ReferenceDescription({
                 referenceTypeId: "ns=1;i=10",
@@ -148,9 +149,7 @@ describe("Browse Service", function () {
         redirectToFile('BrowseResponse_to_json.log', function () {
 
             var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
-            var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
-            import NodeClass from "lib/datamodel/NodeClass"
-
+            
             var ref = new browse_service.ReferenceDescription({
                 referenceTypeId: "ns=1;i=10",
                 isForward: true,

@@ -7,7 +7,7 @@ import DataValue from "lib/datamodel/DataValue";
 var Variant = require("lib/datamodel/variant").Variant;
 var DataType = require("lib/datamodel/variant").DataType;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId from "lib/datamodel/NodeId";
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 var read_service = require("lib/services/read_service");
 var AttributeIds = read_service.AttributeIds;

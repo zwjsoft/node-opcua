@@ -3,7 +3,7 @@ var should = require("should");
 
 import makeBrowsePath from "lib/address_space/makeBrowsePath";
 var BrowsePath = require("lib/services/translate_browse_paths_to_node_ids_service").BrowsePath;
-var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
+import { resolveNodeId } from "lib/datamodel/NodeId";
 
 describe("#makeBrowsePath", function () {
 

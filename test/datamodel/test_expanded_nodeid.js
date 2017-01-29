@@ -1,7 +1,9 @@
 /*global describe, it, require*/
 require("requirish")._(module);
-var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
-var NodeIdType = require("lib/datamodel/nodeid").NodeIdType;
+import { 
+    makeNodeId, 
+    NodeIdType 
+} from "lib/datamodel/NodeId";
 var should = require("should");
 import ExpandedNodeId,
     { 

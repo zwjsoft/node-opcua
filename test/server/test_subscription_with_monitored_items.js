@@ -27,8 +27,7 @@ import DataValue from "lib/datamodel/DataValue";
 var Variant = require("lib/datamodel/variant").Variant;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 import AttributeIds from "lib/datamodel/attribute-ids/AttributeIds";
-var NodeId = require("lib/datamodel/nodeid").NodeId;
-
+import NodeId, { makeNodeId } from "lib/datamodel/NodeId";
 var resourceLeakDetector = require("test/helpers/resource_leak_detector").resourceLeakDetector;
 
 var encode_decode = require("lib/misc/encode_decode");
@@ -140,7 +139,7 @@ describe("Subscriptions and MonitoredItems", function () {
 
 
             var name = "AccessLevel_CurrentRead_NotUser";
-            var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
+            
             var namespaceIndex = 100;
 
             accessLevel_CurrentRead_NotUserNode = addressSpace.addVariable({

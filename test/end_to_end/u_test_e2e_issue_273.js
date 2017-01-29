@@ -8,7 +8,7 @@ var _ = require("underscore");
 
 var OPCUAClient = opcua.OPCUAClient;
 var perform_operation_on_client_session = require("test/helpers/perform_operation_on_client_session").perform_operation_on_client_session;
-var coerceNodeId = require("lib/datamodel/nodeid").coerceNodeId;
+import { coerceNodeId } from "lib/datamodel/NodeId";
 var DataType = require("lib/datamodel/variant").DataType;
 
 

@@ -5,7 +5,8 @@ var assert = require("assert");
 
 var get_mini_address_space = require("test/fixtures/fixture_mininodeset_address_space").get_mini_address_space;
 
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId from "lib/datamodel/NodeId";
+import { makeNodeId, resolveNodeId } from "lib/datamodel/NodeId";
 var browse_service = require("lib/services/browse_service");
 var BrowseDirection = browse_service.BrowseDirection;
 
@@ -197,10 +198,9 @@ describe("testing address space", function () {
 
     describe("AddressSpace#findCorrespondingBasicDataType",function() {
 
-        var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
+        
         var DataTypeIds = require("lib/opcua_node_ids").DataTypeIds;
         var DataType = require("lib/datamodel/variant").DataType;
-        var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
 
         it("should findCorrespondingBasicDataType i=13 => DataType.String",function() {
 
@@ -234,10 +234,9 @@ describe("testing address space", function () {
 
     describe("AddressSpace#findCorrespondingBasicDataType",function() {
 
-        var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
         var DataTypeIds = require("lib/opcua_node_ids").DataTypeIds;
         var DataType = require("lib/datamodel/variant").DataType;
-        var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
+       
 
         it("should findCorrespondingBasicDataType i=13 => DataType.String",function() {
 
