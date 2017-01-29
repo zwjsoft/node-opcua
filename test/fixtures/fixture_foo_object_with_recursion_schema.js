@@ -1,13 +1,10 @@
-
-import {
-  next_available_id
-} from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 
 var FooWithRecursion_Schema = {
     name: "FooWithRecursion",
     documentation: 'A dummy Object.',
-    id: next_available_id(),
+    id: nextAvailableId(),
 
     fields: [
         {name: "name", fieldType: "String"},

@@ -134,13 +134,13 @@ describe("ADI - Testing a server that exposes Analyser Devices",function(){
             return  w(c.browseName.toString(),25) + " " + w(c.nodeId.toString(),25) + w(c.modellingRule,25);
         }
         objectType.getComponents().forEach(function(c){console.log(f(c));});
-        console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz".yellow + objectType.browseName.toString());
+        //xx console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz".yellow + objectType.browseName.toString());
         var baseType = objectType.subtypeOfObj;
         baseType.getComponents().forEach(function(c){console.log(f(c));});
-        console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz".yellow+ baseType.browseName.toString());
+        //xx console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz".yellow+ baseType.browseName.toString());
         baseType = baseType.subtypeOfObj;
         baseType.getComponents().forEach(function(c){console.log(f(c));});
-        console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz".yellow+ baseType.browseName.toString());
+        //xx console.log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz".yellow+ baseType.browseName.toString());
 
     }
 

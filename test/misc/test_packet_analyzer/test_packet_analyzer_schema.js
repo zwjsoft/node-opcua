@@ -1,9 +1,7 @@
-import {
-  next_available_id
-} from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 const Person2_Schema = {
-    id: next_available_id(),
+    id: nextAvailableId(),
     name: "Person2",
     fields: [
         {name: "lastName", fieldType: "UAString"},

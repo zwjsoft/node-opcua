@@ -1,8 +1,8 @@
-import { next_available_id } from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 const BrowseResult_Schema = {
     name: "BrowseResult",
-    id: next_available_id(),
+    id: nextAvailableId(),
     documentation: "The result of a browse operation.",
     fields: [
         { name: "statusCode", fieldType: "StatusCode", documentation: "A code indicating any error during the operation."},

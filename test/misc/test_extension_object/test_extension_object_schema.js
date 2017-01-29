@@ -1,10 +1,8 @@
-import {
-  next_available_id
-} from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 exports.MetaShapeForUnitTest_Schema = {
     name: "MetaShapeForUnitTest",
-    id: next_available_id(),
+    id: nextAvailableId(),
     fields: [
         {name: "name", fieldType: "String"},
         {name: "shape", fieldType: "ExtensionObject"},

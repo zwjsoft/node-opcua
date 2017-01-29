@@ -362,16 +362,16 @@ describe("Factories: testing encodingDefaultBinary and constructObject", functio
 
     it("a factory object should have a encodingDefaultBinary", function () {
 
-        var company = new Company({name: "ACME"});
+        const company = new Company({name: "ACME"});
         company.encodingDefaultBinary.should.eql(ec.makeExpandedNodeId(Company_Schema.id));
 
     });
 
     it("should create a object from a encodingDefaultBinaryId", function () {
 
-        var getObjectClassName = require("lib/misc/utils").getObjectClassName;
+        const getObjectClassName = require("lib/misc/utils").getObjectClassName;
 
-        var obj = factories.constructObject(ec.makeExpandedNodeId(Company_Schema.id));
+        const obj = factories.constructObject(ec.makeExpandedNodeId(Company_Schema.id));
 
         should(obj).have.property("_schema");
         obj._schema.name.should.equal("Company");
@@ -387,9 +387,9 @@ describe("Factories: testing encodingDefaultBinary and constructObject", functio
 
         createObject(FakeBlob_Schema, "tmp", "_schema");
 
-        var Blob = factories.registerObject(FakeBlob_Schema, "tmp");
+        const Blob = factories.registerObject(FakeBlob_Schema, "tmp");
 
-        var blob = new Blob({buffer0: new Buffer(0), buffer1: new Buffer(1024)});
+        const blob = new Blob({buffer0: new Buffer(0), buffer1: new Buffer(1024)});
 
         encode_decode_round_trip_test(blob);
 

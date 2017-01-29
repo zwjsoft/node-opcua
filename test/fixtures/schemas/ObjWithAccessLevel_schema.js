@@ -1,10 +1,8 @@
 require("requirish")._(module);
-
-var factories = require("lib/misc/factories");
-
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 var ObjWithAccessLevel_Schema = {
 
-    id: factories.next_available_id(),
+    id: nextAvailableId(),
     name: "ObjWithAccessLevel",
     fields: [
         {name: "title", fieldType: "UAString"},

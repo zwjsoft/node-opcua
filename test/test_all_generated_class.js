@@ -1,18 +1,17 @@
-require("requirish")._(module);
-var factories = require("lib/misc/factories");
-var _defaultTypeMap = require("lib/misc/factories_builtin_types")._defaultTypeMap;
+import factories from "lib/misc/factories";
+import fs from "fs";
+import path from "path";
+import _ from "underscore";
+import assert from "better-assert";
+import {_defaultTypeMap}  from  "lib/misc/factories_builtin_types";
 
-var fs = require("fs");
-var path = require("path");
-var _ = require("underscore");
-var assert = require("better-assert");
 function getFiles(dir, files_) {
     files_ = files_ || [];
     if (typeof files_ === 'undefined') { files_ = []; }
-    var files = fs.readdirSync(dir);
-    for (var i in files) {
+    const files = fs.readdirSync(dir);
+    for (let i in files) {
         if (!files.hasOwnProperty(i)) { continue; }
-        var name = dir + '/' + files[i];
+        const name = dir + '/' + files[i];
         if (fs.statSync(name).isDirectory()) {
             //xx getFiles(name,files_);
         } else {
@@ -33,14 +32,14 @@ require("schemas/39394884f696ff0bf66bacc9a8032cc074e0158e/ServerStatus");
 require("lib/services/write_service");
 
 require("lib/services/get_endpoints_service");
-var _enumerations = require("lib/misc/factories_enumerations")._private._enumerations;
+const _enumerations = require("lib/misc/factories_enumerations")._private._enumerations;
 assert(_enumerations.MessageSecurityMode);
 
-var encode_decode_round_trip_test = require("test/helpers/encode_decode_round_trip_test").encode_decode_round_trip_test;
+const encode_decode_round_trip_test = require("test/helpers/encode_decode_round_trip_test").encode_decode_round_trip_test;
 
-var folder_for_generated_file = require("lib/misc/factory_code_generator").folder_for_generated_file;
+const folderForGeneratedFile = require("lib/misc/factory_code_generator").folderForGeneratedFile;
 
-var services_folder = path.join(__dirname,"../lib/services");
+const services_folder = path.join(__dirname, "../lib/services");
 
 if (fs.existsSync("../_generated_/_auto_generated_SCHEMA_ServerState")) {
     require("../_generated_/_auto_generated_SCHEMA_ServerState");
@@ -48,12 +47,12 @@ if (fs.existsSync("../_generated_/_auto_generated_SCHEMA_ServerState")) {
 
 describe("testing all auto_generated Class", function () {
 
-    var services_javascript_source = getFiles(services_folder);
+    const services_javascript_source = getFiles(services_folder);
     services_javascript_source.forEach(function (filename) {
         require(filename);
     });
 
-    var files = getFiles(folder_for_generated_file);
+    let files = getFiles(folderForGeneratedFile);
     files = files.filter(function (f) {
         return (f.indexOf("_auto_generated_") > 0 && f.indexOf("SCHEMA") === -1);
     });
@@ -66,27 +65,27 @@ describe("testing all auto_generated Class", function () {
 
     files.forEach(function (filename) {
 
-        var re = /.*_auto_generated_(.*)\.js/;
+        const re = /.*_auto_generated_(.*)\.js/;
 
-        var name = re.exec(filename)[1];
+        const name = re.exec(filename)[1];
         //xx console.log(name);
 
         if (name === "Variant") {
-            // ignore variant as Variant use specifics consistency rules in constructor
+            // ignore Variant as Variant use specifics consistency rules in constructor
             // that cannot be easily randomly checked here -  Variant are fully tested in dedicated test anyway.
             return;
         }
         it("verify auto generated class encoding and decoding " + name, function () {
 
-            var CLASSCONSTRUCTOR = require(filename)[name];
+            const CLASSCONSTRUCTOR = require(filename)[name];
 
-            var schema = CLASSCONSTRUCTOR.prototype._schema;
-            var options = {};
+            const schema = CLASSCONSTRUCTOR.prototype._schema;
+            const options = {};
 
             schema.fields.forEach(function (field) {
                 if (field.isArray) {
                     if (_defaultTypeMap[field.fieldType]) {
-                        var defVal = _defaultTypeMap[field.fieldType].defaultValue;
+                        const defVal = _defaultTypeMap[field.fieldType].defaultValue;
 
                         if (defVal !== undefined) {
                             if (_.isFunction(defVal)) {
@@ -105,11 +104,11 @@ describe("testing all auto_generated Class", function () {
             });
 
 
-            var obj = new CLASSCONSTRUCTOR(options);
+            const obj = new CLASSCONSTRUCTOR(options);
             encode_decode_round_trip_test(obj);
             obj.explore();
 
-            var txt = obj.toString();
+            const txt = obj.toString();
 
 
         });
