@@ -10,7 +10,7 @@ var Variant = require("lib/datamodel/variant").Variant;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 
 
-var check_deadband = require("lib/datamodel/deadband_checker").check_deadband;
+import checkDeadband from "lib/datamodel/checkDeadband";
 
 
 describe("test DeadBand Checker",function() {
