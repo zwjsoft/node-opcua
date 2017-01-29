@@ -22,7 +22,7 @@ var path = require("path");
 
 
 var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
-var coerceLocalizedText = require("lib/datamodel/localized_text").coerceLocalizedText;
+import { coerceLocalizedText } from "lib/datamodel/LocalizedText";
 
 module.exports = function(engine) {
 

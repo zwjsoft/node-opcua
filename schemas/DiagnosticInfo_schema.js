@@ -7,7 +7,7 @@ import assert from 'better-assert';
 import {registerEnumeration} from "lib/misc/factories_enumerations";
 import * as ec from "lib/misc/encode_decode";
 import {QualifiedName} from "lib/datamodel/qualified_name";
-import {LocalizedText} from "lib/datamodel/localized_text";
+import LocalizedText from "lib/datamodel/LocalizedText";
 import {StatusCodes} from "lib/datamodel/opcua_status_code";
 import {set_flag, check_flag} from "lib/misc/utils";
 

@@ -12,7 +12,7 @@ var redirectToFile = require("lib/misc/utils").redirectToFile;
 var encode_decode_round_trip_test = require("test/helpers/encode_decode_round_trip_test").encode_decode_round_trip_test;
 
 var QualifiedName = require("lib/datamodel/qualified_name").QualifiedName;
-var LocalizedText = require("lib/datamodel/localized_text").LocalizedText;
+import LocalizedText from "lib/datamodel/LocalizedText";
 var Variant = require("lib/datamodel/variant").Variant;
 
 

@@ -27,8 +27,7 @@ const NodeId           = require("lib/datamodel/nodeid").NodeId;
 const NumericRange     = require("lib/datamodel/numeric_range").NumericRange;
 import  AccessLevelFlag from "lib/datamodel/access-level/accessLevelFlag";
 
-const LocalizedText       = require("lib/datamodel/localized_text").LocalizedText;
-const coerceLocalizedText = require("lib/datamodel/localized_text").coerceLocalizedText;
+import LocalizedText, { coerceLocalizedText } from "lib/datamodel/LocalizedText";
 const QualifiedName       = require("lib/datamodel/qualified_name").QualifiedName;
 const coerceQualifyName   = require("lib/datamodel/qualified_name").coerceQualifyName;
 
