@@ -15,7 +15,7 @@ import sameDataValue from "lib/datamodel/DataValue/sameDataValue";
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 var AttributeIds = require("lib/services/read_service").AttributeIds;
 var should = require("should");
-var NodeClass = require("lib/datamodel/nodeclass").NodeClass;
+import NodeClass from "lib/datamodel/NodeClass"
 var _ = require("underscore");
 var NumericRange = require("lib/datamodel/numeric_range").NumericRange;
 

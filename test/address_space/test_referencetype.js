@@ -460,7 +460,7 @@ describe("testing ReferenceType", function () {
 describe(" improving performance of isSupertypeOf", function () {
 
 
-    var NodeClass = require("lib/datamodel/nodeclass").NodeClass;
+    import NodeClass from "lib/datamodel/NodeClass"
     //  References i=31
     //  +->(hasSubtype) NoHierarchicalReferences
     //                  +->(hasSubtype) HasTypeDefinition

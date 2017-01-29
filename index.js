@@ -37,7 +37,7 @@ const Range               = require("lib/data_access/Range").Range;
 const get_fully_qualified_domain_name = require("lib/misc/hostname").get_fully_qualified_domain_name;
 const makeApplicationUrn              = require("lib/misc/applicationurn").makeApplicationUrn;
 
-const NodeClass = require("lib/datamodel/nodeclass").NodeClass;
+import NodeClass from "lib/datamodel/NodeClass";
 
 // services
 const browse_service                             = require("lib/services/browse_service");

@@ -15,7 +15,7 @@ var Variant = require("lib/datamodel/variant").Variant;
 import DataValue from "lib/datamodel/DataValue";
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 var AttributeIds = require("lib/services/read_service").AttributeIds;
-var NodeClass = require("lib/datamodel/nodeclass").NodeClass;
+import NodeClass from "lib/datamodel/NodeClass"
 
 var get_mini_address_space = require("test/fixtures/fixture_mininodeset_address_space").get_mini_address_space;
 
