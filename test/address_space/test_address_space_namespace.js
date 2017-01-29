@@ -6,7 +6,7 @@ var path = require("path");
 
 var get_mini_address_space = require("test/fixtures/fixture_mininodeset_address_space").get_mini_address_space;
 
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId from "lib/datamodel/NodeId";
 
 import AddressSpace from "lib/address_space/AddressSpace";
 import generateAddressSpace from "lib/address_space/generateAddressSpace";

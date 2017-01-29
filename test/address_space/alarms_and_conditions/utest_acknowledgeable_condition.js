@@ -18,7 +18,7 @@ import AddressSpace from "lib/address_space/AddressSpace";
 import generateAddressSpace from "lib/address_space/generateAddressSpace";
 import { coerceLocalizedText } from "lib/datamodel/LocalizedText";
 
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId from "lib/datamodel/NodeId";
 //var conditions =require("lib/address_space/alarms_and_conditions/condition");
 import UAMethod  from "lib/address_space/UAMethod";
 

@@ -16,7 +16,8 @@ var path = require("path");
 
 var get_mini_address_space = require("test/fixtures/fixture_mininodeset_address_space").get_mini_address_space;
 
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId, { makeNodeId } from "lib/datamodel/NodeId";
+
 
 import AddressSpace from "lib/address_space/AddressSpace";
 
@@ -207,8 +208,7 @@ it("should bind an xml-preloaded Extension Object Variable : ServerStatus ",func
     // in this test, we verify that we can easily bind the Server_ServerStatus object
     // the process shall automatically bind variables and substructures recursively
     var VariableIds = require("lib/opcua_node_ids").VariableIds;
-    var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
-
+    
     var serverStatus = addressSpace.findNode(makeNodeId(VariableIds.Server_ServerStatus));
     serverStatus.browseName.toString().should.eql("ServerStatus");
 

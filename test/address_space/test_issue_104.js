@@ -6,7 +6,9 @@ var should = require("should");
 import AddressSpace from "lib/address_space/AddressSpace";
 var assert = require("better-assert");
 import generateAddressSpace from "lib/address_space/generateAddressSpace";
-var nodeId = require("lib/datamodel/nodeid");
+import NodeId, {
+    NodeIdType
+} from "lib/datamodel/NodeId";
 var path = require("path");
 var nodesetFilename = path.join(__dirname,"../../lib/server/mini.Node.Set2.xml");
 var DataType = require("lib/datamodel/variant").DataType;
@@ -48,30 +50,30 @@ describe("testing github issue https://github.com/node-opcua/node-opcua/issues/1
 
         assertHasMatchingReference(var1,{ referenceType: "OrganizedBy", nodeId: rootFolder.nodeId});
 
-        assert(var1.nodeId.identifierType === nodeId.NodeIdType.NUMERIC);
+        assert(var1.nodeId.identifierType === NodeIdType.NUMERIC);
 
         // Create two variables with the next numeric node IDs
         var var2 = addressSpace.addVariable({
-            nodeId: new nodeId.NodeId(var1.nodeId.identifierType, var1.nodeId.value + 1, var1.nodeId.namespace),
+            nodeId: new NodeId(var1.nodeId.identifierType, var1.nodeId.value + 1, var1.nodeId.namespace),
             browseName: "var2",
             dataType: "Double",
             value: {dataType: DataType.Double , value: 0 },
             organizedBy: rootFolder
         });
 
-        should(var2.nodeId.identifierType).eql(nodeId.NodeIdType.NUMERIC);
+        should(var2.nodeId.identifierType).eql(NodeIdType.NUMERIC);
         should(var2.nodeId.namespace).eql(var1.nodeId.namespace);
         should(var2.nodeId.value).eql(var1.nodeId.value + 1);
 
         var var3 = addressSpace.addVariable({
-            nodeId: new nodeId.NodeId(var1.nodeId.identifierType, var1.nodeId.value + 2, var1.nodeId.namespace),
+            nodeId: new NodeId(var1.nodeId.identifierType, var1.nodeId.value + 2, var1.nodeId.namespace),
             browseName: "var3",
             dataType: "Double",
             value: {dataType: DataType.Double , value: 0 },
             organizedBy: rootFolder
         });
 
-        should(var3.nodeId.identifierType).eql(nodeId.NodeIdType.NUMERIC);
+        should(var3.nodeId.identifierType).eql(NodeIdType.NUMERIC);
         should(var3.nodeId.namespace).eql(var1.nodeId.namespace);
         should(var3.nodeId.value).eql(var1.nodeId.value + 2);
 
@@ -84,7 +86,7 @@ describe("testing github issue https://github.com/node-opcua/node-opcua/issues/1
             organizedBy: rootFolder
         });
 
-        should(var4.nodeId.identifierType).eql(nodeId.NodeIdType.NUMERIC);
+        should(var4.nodeId.identifierType).eql(NodeIdType.NUMERIC);
         should(var4.nodeId.namespace).eql(var1.nodeId.namespace);
         should(var4.nodeId.value).eql(var1.nodeId.value + 3);
     });

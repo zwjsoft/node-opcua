@@ -12,7 +12,7 @@ var opcua = require("index");
 
 var Method =  opcua.Method;
 var StatusCodes = opcua.StatusCodes;
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId from "lib/datamodel/NodeId";
 
 var DataType = opcua.DataType;
 var Variant = opcua.Variant;

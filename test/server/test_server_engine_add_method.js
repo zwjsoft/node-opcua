@@ -5,11 +5,10 @@ var should = require("should");
 import ServerEngine, { mini_nodeset_filename } from "lib/server/ServerEngine";
 import DataValue from "lib/datamodel/DataValue";
 
-var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
 var Variant = require("lib/datamodel/variant").Variant;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 var DataType = require("lib/datamodel/variant").DataType;
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId, { resolveNodeId } from "lib/datamodel/NodeId";
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 
 var engine, FolderTypeId, BaseDataVariableTypeId, ref_Organizes_Id;

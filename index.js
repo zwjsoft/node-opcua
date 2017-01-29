@@ -11,9 +11,11 @@ process.env.NODE_PATH=__dirname + ";" + process.env.NODE_PATH;
 // common services
 const structures       = require("lib/datamodel/structures");
 const parseEndpointUrl = require("lib/nodeopcua").parseEndpointUrl;
-const resolveNodeId    = require("lib/datamodel/nodeid").resolveNodeId;
-const makeNodeId       = require("lib/datamodel/nodeid").makeNodeId;
-const coerceNodeId     = require("lib/datamodel/nodeid").coerceNodeId;
+import NodeId , {
+    resolveNodeId,
+    makeNodeId,
+    coerceNodeId
+} from "lib/datamodel/NodeId";
 import {
   makeExpandedNodeId,
   coerceExpandedNodeId
@@ -23,7 +25,6 @@ const DataType         = require("lib/datamodel/variant").DataType;
 import DataValue from "lib/datamodel/DataValue";
 const Variant          = require("lib/datamodel/variant").Variant;
 const VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
-const NodeId           = require("lib/datamodel/nodeid").NodeId;
 const NumericRange     = require("lib/datamodel/numeric_range").NumericRange;
 import  AccessLevelFlag from "lib/datamodel/access-level/accessLevelFlag";
 

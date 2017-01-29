@@ -1,7 +1,7 @@
 require("requirish")._(module);
 import _ from "underscore";
 import assert from "better-assert";
-import {NodeId} from "lib/datamodel/nodeid";
+import NodeId from "lib/datamodel/NodeId";
 
 /*
  * results []

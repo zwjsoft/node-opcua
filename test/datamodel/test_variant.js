@@ -22,6 +22,7 @@ var Variant_ArrayMask = 0x80;
 var Variant_ArrayDimensionsMask = 0x40;
 var Variant_TypeMask = 0x3F;
 var factories = require("lib/misc/factories");
+import { makeNodeId } from "lib/datamodel/NodeId";
 
 
 describe("Variant", function () {
@@ -342,7 +343,7 @@ describe("Variant - Analyser", function () {
     // increase timeout to cope with istanbul
     this.timeout(Math.max(400000, this._timeout));
 
-    var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
+    
 
     var manyValues = [];
     for (var i = 0; i < 1000; i++) {

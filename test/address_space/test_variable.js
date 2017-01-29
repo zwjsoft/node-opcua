@@ -90,8 +90,8 @@ describe("testing Variables ", function () {
 
 });
 
-var NodeId = require("lib/datamodel/nodeid").NodeId;
-var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
+import NodeId from "lib/datamodel/NodeId";
+import { makeNodeId } from "lib/datamodel/NodeId";
 
 describe("Address Space : add Variable :  testing various variations for specifying dataType", function () {
 

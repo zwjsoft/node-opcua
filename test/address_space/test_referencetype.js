@@ -6,7 +6,7 @@ import AddressSpace from "lib/address_space/AddressSpace";
 import BaseNode from "lib/address_space/BaseNode";
 
 var should = require("should");
-var nodeid = require("lib/datamodel/nodeid");
+import { makeNodeId } from "lib/datamodel/NodeId";
 import AttributeIds from "lib/datamodel/attribute-ids/AttributeIds";
 var DataType = require("lib/datamodel/variant").DataType;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
@@ -20,7 +20,9 @@ var get_mini_address_space = require("test/fixtures/fixture_mininodeset_address_
 
 var browse_service = require("lib/services/browse_service");
 import dump from "lib/address_space/BaseNode/dumpReferenceDescriptions";
-
+import NodeClass from "lib/datamodel/NodeClass"
+import NodeId from "lib/datamodel/NodeId";
+    
 describe("testing ReferenceType", function () {
     var addressSpace;
     var rootFolder;
@@ -55,7 +57,7 @@ describe("testing ReferenceType", function () {
 
         var hr = addressSpace.findReferenceType("HierarchicalReferences");
         hr.browseName.toString().should.equal("HierarchicalReferences");
-        hr.nodeId.toString().should.eql(nodeid.makeNodeId(33).toString());
+        hr.nodeId.toString().should.eql(makeNodeId(33).toString());
 
     });
 
@@ -81,7 +83,7 @@ describe("testing ReferenceType", function () {
     it("should find 'Organizes'", function () {
         var organizes_refId = addressSpace.findReferenceType("Organizes");
         organizes_refId.browseName.toString().should.equal("Organizes");
-        organizes_refId.nodeId.toString().should.eql(nodeid.makeNodeId(35).toString());
+        organizes_refId.nodeId.toString().should.eql(makeNodeId(35).toString());
     });
 
     it("'Organizes' should be a super type of 'HierarchicalReferences'", function () {
@@ -371,7 +373,6 @@ describe("testing ReferenceType", function () {
     });
 
 
-    var NodeId = require("lib/datamodel/nodeid").NodeId;
     function _is_valid_BrowseDirection(browseDirection) {
         return  browseDirection === BrowseDirection.Forward ||
             browseDirection === BrowseDirection.Inverse ||
@@ -460,7 +461,6 @@ describe("testing ReferenceType", function () {
 describe(" improving performance of isSupertypeOf", function () {
 
 
-    import NodeClass from "lib/datamodel/NodeClass"
     //  References i=31
     //  +->(hasSubtype) NoHierarchicalReferences
     //                  +->(hasSubtype) HasTypeDefinition

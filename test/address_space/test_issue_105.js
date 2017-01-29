@@ -10,7 +10,7 @@ var AttributeIds = require("lib/services/read_service").AttributeIds;
 import AddressSpace from "lib/address_space/AddressSpace";
 var _ = require("underscore");
 import generateAddressSpace from "lib/address_space/generateAddressSpace";
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId from "lib/datamodel/NodeId";
 var assert = require("better-assert");
 var path = require("path");
 var createTemperatureSensorType = require("./fixture_temperature_sensor_type").createTemperatureSensorType;

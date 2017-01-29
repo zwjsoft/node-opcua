@@ -1,6 +1,7 @@
 /*global xit,it,describe,before,after,beforeEach,afterEach,require*/
 "use strict";
 require("requirish")._(module);
+import { makeNodeId } from "lib/datamodel/NodeId";
 var assert = require("better-assert");
 var should = require("should");
 var async = require("async");
@@ -37,7 +38,7 @@ module.exports = function (test) {
 
         it("monitoring variables shall only reports real value changes : fixing bug #119", function (done) {
 
-            var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
+           
             var VariableIds = require("lib/opcua_node_ids").VariableIds;
 
             perform_operation_on_client_session(client, endpointUrl, function (session, inner_done) {

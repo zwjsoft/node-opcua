@@ -6,8 +6,8 @@ var DataType = require("lib/datamodel/variant").DataType;
 var AttributeIds = require("lib/services/read_service").AttributeIds;
 import AddressSpace from "lib/address_space/AddressSpace";
 import NodeClass from "lib/datamodel/NodeClass"
-var NodeId = require("lib/datamodel/nodeid").NodeId;
-var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
+
+import NodeId, { resolveNodeId } from "lib/datamodel/NodeId";
 var ObjectTypeIds      = require("lib/opcua_node_ids").ObjectTypeIds;
 var VariableTypeIds    = require("lib/opcua_node_ids").VariableTypeIds;
 var ReferenceTypeIds   = require("lib/opcua_node_ids").ReferenceTypeIds;

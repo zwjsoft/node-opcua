@@ -26,9 +26,10 @@
  */
 import _ from "underscore";
 import assert from "better-assert";
-import {NodeId} from "lib/datamodel/nodeid";
-import {makeNodeId} from "lib/datamodel/nodeid";
-import {coerceNodeId} from "lib/datamodel/nodeid";
+import NodeId,{
+    makeNodeId,
+    coerceNodeId
+} from "lib/datamodel/NodeId";
 import {DataType} from "lib/datamodel/variant";
 
 // OPC Unified Architecture, Part 4 $7.1 page 106

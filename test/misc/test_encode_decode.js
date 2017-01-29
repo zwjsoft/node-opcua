@@ -6,7 +6,8 @@ var ec = require("lib/misc/encode_decode");
 var opcua = require("lib/nodeopcua");
 var BinaryStream = require("lib/misc/binaryStream").BinaryStream;
 import ExpandedNodeId from "lib/datamodel/ExpandedNodeId";
-var NodeIdType = require("lib/datamodel/nodeid").NodeIdType;
+import NodeId, { NodeIdType } from "lib/datamodel/NodeId";
+
 
 /**
  * @method test_encode_decode
@@ -368,8 +369,6 @@ describe("testing built-in type encoding", function () {
     });
 
     it("should encode and decode a BYTESTRING NodeId", function () {
-        var NodeId = require("lib/datamodel/nodeid").NodeId;
-        var NodeIdType = require("lib/datamodel/nodeid").NodeIdType;
         var crypto = require("crypto");
 
         var nodeId = new NodeId(NodeIdType.BYTESTRING, crypto.randomBytes(16));

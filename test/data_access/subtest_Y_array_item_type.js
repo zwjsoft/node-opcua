@@ -6,7 +6,6 @@ import ServerEngine from "lib/server/ServerEngine";
 import DataValue from "lib/datamodel/DataValue";
 var Variant = require("lib/datamodel/variant").Variant;
 var DataType = require("lib/datamodel/variant").DataType;
-var NodeId = require("lib/datamodel/nodeid").NodeId;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 var read_service = require("lib/services/read_service");
 var AttributeIds = read_service.AttributeIds;
@@ -20,8 +19,9 @@ var async = require("async");
 
 var path = require("path");
 
-
-var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
+import NodeId, { 
+    resolveNodeId
+} from "lib/datamodel/NodeId";
 import { coerceLocalizedText } from "lib/datamodel/LocalizedText";
 
 module.exports = function(engine) {

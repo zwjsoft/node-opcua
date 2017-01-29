@@ -6,7 +6,7 @@ require("requirish")._(module);
 var assert = require("better-assert");
 var util = require("util");
 var _ = require("underscore");
-var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
+import { makeNodeId } from "lib/datamodel/NodeId";
 var schema_helpers = require("lib/misc/factories_schema_helpers");
 var extractAllFields = schema_helpers.extractAllFields;
 var resolveSchemaFieldTypes = schema_helpers.resolveSchemaFieldTypes;

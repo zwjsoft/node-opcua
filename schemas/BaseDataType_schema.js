@@ -4,7 +4,7 @@
 //var factories = require("lib/misc/factories");
 //var ec = require("lib/misc/encode_decode");
 //var DataType = require("lib/datamodel/variant").DataType;
-//var NodeId = require("lib/datamodel/nodeid").NodeId;
+//import NodeId from "lib/datamodel/NodeId";
 //var _ = require("underscore");
 //var assert = require("better-assert");
 //

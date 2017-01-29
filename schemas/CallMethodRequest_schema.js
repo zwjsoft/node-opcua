@@ -2,7 +2,7 @@ require("requirish")._(module);
 
 import _ from "underscore";
 import assert from "better-assert";
-import {NodeId} from "lib/datamodel/nodeid";
+import NodeId from "lib/datamodel/NodeId";
 import {_defaultTypeMap} from "lib/misc/factories_builtin_types";
 const encode_NodeId = _defaultTypeMap.NodeId.encode;
 const decode_NodeId = _defaultTypeMap.NodeId.decode;

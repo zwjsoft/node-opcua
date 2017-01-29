@@ -8,22 +8,23 @@ import ServerEngine, {
 } from "lib/server/ServerEngine";
 import DataValue from "lib/datamodel/DataValue";
 
-var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
 import NodeClass from "lib/datamodel/NodeClass"
 var browse_service = require("lib/services/browse_service");
 var BrowseDirection = browse_service.BrowseDirection;
 var read_service = require("lib/services/read_service");
 var TimestampsToReturn = read_service.TimestampsToReturn;
 var util = require("util");
-var NodeId = require("lib/datamodel/nodeid").NodeId;
+import NodeId, { 
+    resolveNodeId,
+    makeNodeId,
+    coerceNodeId
+} from "lib/datamodel/NodeId";
 import { makeExpandedNodeId } from "lib/datamodel/ExpandedNodeId";
 var assert = require("better-assert");
 var AttributeIds = read_service.AttributeIds;
 
 var DataType = require("lib/datamodel/variant").DataType;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
-var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
-var coerceNodeId = require("lib/datamodel/nodeid").coerceNodeId;
 
 var VariableIds = require("lib/opcua_node_ids").VariableIds;
 var ObjectIds= require("lib/opcua_node_ids").ObjectIds;
@@ -1462,11 +1463,11 @@ describe("testing ServerEngine", function () {
 
     describe("testing ServerEngine browsePath", function () {
         var translate_service = require("lib/services/translate_browse_paths_to_node_ids_service");
-        var nodeid = require("lib/datamodel/nodeid");
+       
 
         it("translating a browse path to a nodeId with a invalid starting node shall return BadNodeIdUnknown", function () {
             var browsePath = new translate_service.BrowsePath({
-                startingNode: nodeid.makeNodeId(0), // <=== invalid node id
+                startingNode: makeNodeId(0), // <=== invalid node id
                 relativePath: []
             });
 
@@ -1480,7 +1481,7 @@ describe("testing ServerEngine", function () {
         it("translating a browse path to a nodeId with an empty relativePath  shall return rootElement", function () {
 
             var browsePath = new translate_service.BrowsePath({
-                startingNode: nodeid.makeNodeId(84), // <=== valid node id
+                startingNode: makeNodeId(84), // <=== valid node id
                 relativePath: {elements: []}         // <=== empty path
             });
             var browsePathResult = engine.browsePath(browsePath);
@@ -1490,7 +1491,7 @@ describe("testing ServerEngine", function () {
 
         it("The Server shall return BadBrowseNameInvalid if the targetName is missing. ", function () {
             var browsePath = new translate_service.BrowsePath({
-                startingNode: nodeid.makeNodeId(84),
+                startingNode: makeNodeId(84),
                 relativePath: {
                     elements: [
                         {
@@ -1511,7 +1512,7 @@ describe("testing ServerEngine", function () {
         });
         it("The Server shall return BadNoMatch if the targetName doesn't exist. ", function () {
             var browsePath = new translate_service.BrowsePath({
-                startingNode: nodeid.makeNodeId(84),
+                startingNode: makeNodeId(84),
                 relativePath: {
                     elements: [
                         {
@@ -1533,7 +1534,7 @@ describe("testing ServerEngine", function () {
         it("The Server shall return Good if the targetName does exist. ", function () {
 
             var browsePath = new translate_service.BrowsePath({
-                startingNode: nodeid.makeNodeId(84),
+                startingNode: makeNodeId(84),
                 relativePath: {
                     elements: [
                         {
