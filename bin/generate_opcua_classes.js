@@ -25,26 +25,27 @@ require("requirish")._(module);
 import glob from 'glob-fs';
 import registerObject from "lib/misc/create-factory";
 import path from 'path';
+import fs from "fs";
+
 require("lib/misc/extension_object");
 
-var argv = require('yargs')
-    .strict()
-    .usage('Usage: $0 --clear --verbose ')
-    .options({
-        clear: {
-            type: "boolean",
-            describe: "delete existing _generated_ files first"
-        },
-        verbose: {
-            type: "boolean",
-            describe: "display extra info"
-        }
-    }).help("help")
-    .argv;
+const argv = require("yargs")
+.strict()
+.usage("Usage: $0 --clear --verbose ")
+.options({
+    clear: {
+        type: "boolean",
+        describe: "delete existing _generated_ files first"
+    },
+    verbose: {
+        type: "boolean",
+        describe: "display extra info"
+    }
+}).help("help")
+  .argv;
 
-var fs = require("fs");
 
-function remove_files_in_folder(dirPath, removeSelf) {
+function removeFileInFolder(dirPath, removeSelf) {
 
     if (argv.verbose) {
         console.log(" removing files in ", dirPath);
@@ -53,7 +54,7 @@ function remove_files_in_folder(dirPath, removeSelf) {
     if (removeSelf === undefined) {
         removeSelf = true;
     }
-    var files;
+    let files;
     try {
         files = fs.readdirSync(dirPath);
     }
@@ -61,8 +62,8 @@ function remove_files_in_folder(dirPath, removeSelf) {
         return;
     }
     if (files.length > 0) {
-        for (var i = 0; i < files.length; i++) {
-            var filePath = dirPath + '/' + files[i];
+        for (let i = 0; i < files.length; i++) {
+            const filePath = dirPath + '/' + files[i];
             if (fs.statSync(filePath).isFile()) {
 
                 if (argv.verbose) {
@@ -70,7 +71,7 @@ function remove_files_in_folder(dirPath, removeSelf) {
                 }
                 fs.unlinkSync(filePath);
             } else {
-                remove_files_in_folder(filePath);
+                removeFileInFolder(filePath);
             }
 
         }
@@ -86,7 +87,7 @@ Error.stackTraceLimit = Infinity;
 //   --clear : delete all files in _generated_ folder first
 //   --verbose:
 if (argv.clear) {
-    remove_files_in_folder(path.normalize(path.join(__dirname, "../_generated_")), false);
+    removeFileInFolder(path.normalize(path.join(__dirname, "../_generated_")), false);
 }
 if (argv.verbose) {
     require("lib/misc/factories").verbose = true;
@@ -298,7 +299,6 @@ function doit() {
     registerObject("FindServersResponse");
 
 
-
     // node Management service
     registerObject("AddNodesItem");
     registerObject("AddNodesRequest");
@@ -331,18 +331,18 @@ function doit() {
     registerObject("QueryNextRequest");
     registerObject("QueryNextResponse");
 
-    
+
     // -------------------------------------------------------------------------
-    var filename = path.join(__dirname, "../nodesets/Opc.Ua.NodeSet2.xml");
+    const filename = path.join(__dirname, "../nodesets/Opc.Ua.NodeSet2.xml");
     //has to be required otherwise we get in a mess
-    var AddressSpace = require("lib/address_space/AddressSpace").default;
-    
-    var generateAddressSpace = require("lib/address_space/generateAddressSpace").default;
+    const AddressSpace = require("lib/address_space/AddressSpace").default;
 
-    var createExtensionObjectDefinition = require("lib/address_space/convert_nodeset_to_types").createExtensionObjectDefinition;
+    const generateAddressSpace = require("lib/address_space/generateAddressSpace").default;
+
+    const createExtensionObjectDefinition = require("lib/address_space/convert_nodeset_to_types").createExtensionObjectDefinition;
 
 
-    var addressSpace = new AddressSpace();
+    const addressSpace = new AddressSpace();
 
     generateAddressSpace(addressSpace, filename, function () {
         createExtensionObjectDefinition(addressSpace);
@@ -355,7 +355,7 @@ function doit() {
 try {
     console.error('doing it');
     doit();
-} catch(ex) {
+} catch (ex) {
     console.error(ex);
     throw ex;
 }

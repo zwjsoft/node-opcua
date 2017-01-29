@@ -1,0 +1,1 @@
+--timeout 200000  --compilers js:babel-core/register  --colors --recursive --bail --expose-gc -r should -r ./lib/misc/trace_console_log

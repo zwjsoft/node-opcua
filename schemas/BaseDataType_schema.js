@@ -19,7 +19,7 @@
 //
 //var BaseDataType_Schema = {
 //    name: "BaseDataType",
-//    id: factories.next_available_id(),
+//    id: factories.nextAvailableId(),
 //    fields : [
 //        {name: "definition",  isArray: true, fieldType: "Argument" , defaultValue: [null]},
 //        {name: "arguments" ,  fieldType: "Any" , defaultValue: null, isArray:true},

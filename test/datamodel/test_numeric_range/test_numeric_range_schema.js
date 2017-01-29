@@ -1,12 +1,8 @@
-
-import {
-    next_available_id
-} from "lib/misc/factories";
-
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 const ObjWithNumericRange_Schema = {
 
-    id: next_available_id(),
+    id: nextAvailableId(),
     name: "ObjWithNumericRange",
     fields: [
         {name: "title", fieldType: "UAString"},

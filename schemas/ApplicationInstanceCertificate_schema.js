@@ -1,10 +1,10 @@
-import {next_available_id} from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 // OPC Unified Architecture, Part 4 page 106
 const ApplicationInstanceCertificate_Schema = {
     // ApplicationInstanceCertificate with signature created by a Certificate Authority
     name: "ApplicationInstanceCertificate",
-    id: next_available_id(),
+    id: nextAvailableId(),
 
     fields: [
         // An identifier for the version of the Certificate encoding.

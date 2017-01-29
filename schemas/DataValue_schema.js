@@ -1,4 +1,4 @@
-import { next_available_id } from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 import {set_flag} from "lib/misc/utils";
 import {check_flag} from "lib/misc/utils";
 import * as ec from "lib/misc/encode_decode";
@@ -37,7 +37,7 @@ function getDataValue_EncodingByte(dataValue) {
 // OPC-UA part 4 -  $7.7
 const DataValue_Schema = {
     name: "DataValue",
-    id: next_available_id(),
+    id: nextAvailableId(),
     fields: [
         { name:"value",             fieldType:"Variant"   , defaultValue: null  },
         { name:"statusCode",        fieldType:"StatusCode", defaultValue: StatusCodes.Good  },

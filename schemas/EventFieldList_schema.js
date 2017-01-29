@@ -1,7 +1,7 @@
-import { next_available_id } from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 const EventFieldList_Schema = {
-    id: next_available_id(),
+    id: nextAvailableId(),
     name: "EventFieldList",
     fields: [
         {name: "clientHandle", fieldType: "IntegerId", documentation: "Client-supplied handle for the MonitoredItem"},

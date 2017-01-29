@@ -1,9 +1,9 @@
-import {next_available_id} from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 const RegisteredServer_Schema = {
     documentation:"The information required to register a server with a discovery server.",
     name: "RegisteredServer",
-    id: next_available_id(),
+    id: nextAvailableId(),
     fields: [
         {name:"serverUri",                    fieldType:"String",          documentation:"The globally unique identifier for the server." },
         {name:"productUri",                   fieldType:"String",          documentation:"The globally unique identifier for the product." },

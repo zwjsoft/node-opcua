@@ -1,7 +1,7 @@
-import {next_available_id} from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 const AcknowledgeMessage_Schema = {
     name: "AcknowledgeMessage",
-    id: next_available_id(),
+    id: nextAvailableId(),
     fields: [
         { name: "protocolVersion"   , fieldType: "UInt32" , documentation: "The latest version of the OPC UA TCP protocol supported by the Server." },
         { name: "receiveBufferSize" , fieldType: "UInt32"  },

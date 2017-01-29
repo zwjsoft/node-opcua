@@ -1,8 +1,8 @@
-import {next_available_id} from "lib/misc/factories";
+import {nextAvailableId} from "lib/misc/factoryIdGenerator";
 
 const SequenceHeader_Schema = {
     name: "SequenceHeader",
-    id: next_available_id(),
+    id: nextAvailableId(),
     fields: [
         // A monotonically increasing sequence number assigned by the sender to each
         // MessageChunk sent over the ClientSecureChannelLayer.
