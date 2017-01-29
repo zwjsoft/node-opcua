@@ -5,7 +5,7 @@ var should = require("should");
 var ec = require("lib/misc/encode_decode");
 var opcua = require("lib/nodeopcua");
 var BinaryStream = require("lib/misc/binaryStream").BinaryStream;
-var ExpandedNodeId = require("lib/datamodel/expanded_nodeid").ExpandedNodeId;
+import ExpandedNodeId from "lib/datamodel/ExpandedNodeId";
 var NodeIdType = require("lib/datamodel/nodeid").NodeIdType;
 
 /**

@@ -16,7 +16,7 @@ var read_service = require("lib/services/read_service");
 var TimestampsToReturn = read_service.TimestampsToReturn;
 var util = require("util");
 var NodeId = require("lib/datamodel/nodeid").NodeId;
-var makeExpandedNodeId = require("lib/datamodel/expanded_nodeid").makeExpandedNodeId;
+import { makeExpandedNodeId } from "lib/datamodel/ExpandedNodeId";
 var assert = require("better-assert");
 var AttributeIds = read_service.AttributeIds;
 

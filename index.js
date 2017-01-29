@@ -14,8 +14,10 @@ const parseEndpointUrl = require("lib/nodeopcua").parseEndpointUrl;
 const resolveNodeId    = require("lib/datamodel/nodeid").resolveNodeId;
 const makeNodeId       = require("lib/datamodel/nodeid").makeNodeId;
 const coerceNodeId     = require("lib/datamodel/nodeid").coerceNodeId;
-const makeExpandedNodeId       = require("lib/datamodel/expanded_nodeid").makeExpandedNodeId;
-const coerceExpandedNodeId     = require("lib/datamodel/expanded_nodeid").coerceExpandedNodeId;
+import {
+  makeExpandedNodeId,
+  coerceExpandedNodeId
+} from "lib/datamodel/ExpandedNodeId";
 const StatusCodes      = require("lib/datamodel/opcua_status_code").StatusCodes;
 const DataType         = require("lib/datamodel/variant").DataType;
 import DataValue from "lib/datamodel/DataValue";
