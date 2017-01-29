@@ -23,7 +23,7 @@ var TimestampsToReturn = require("lib/services/read_service").TimestampsToReturn
 var MonitoredItemCreateRequest = subscription_service.MonitoredItemCreateRequest;
 
 var DataType = require("lib/datamodel/variant").DataType;
-var DataValue = require("lib/datamodel/datavalue").DataValue;
+import DataValue from "lib/datamodel/DataValue";
 var Variant = require("lib/datamodel/variant").Variant;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 import AttributeIds from "lib/datamodel/attribute-ids/AttributeIds";

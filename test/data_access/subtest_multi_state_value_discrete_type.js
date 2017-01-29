@@ -3,7 +3,7 @@ var _ = require("underscore");
 var should = require("should");
 import ServerEngine from "lib/server/ServerEngine";
 
-var DataValue = require("lib/datamodel/datavalue").DataValue;
+import DataValue from "lib/datamodel/DataValue";
 var Variant = require("lib/datamodel/variant").Variant;
 var DataType = require("lib/datamodel/variant").DataType;
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;

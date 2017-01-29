@@ -14,8 +14,7 @@ var AttributeIds = opcua.AttributeIds;
 var OPCUAClient = opcua.OPCUAClient;
 
 var address_space_for_conformance_testing = require("lib/simulation/address_space_for_conformance_testing");
-
-var sameDataValue = require("lib/datamodel/datavalue").sameDataValue;
+import sameDataValue from "lib/datamodel/DataValue/sameDataValue";
 
 module.exports = function (test) {
 

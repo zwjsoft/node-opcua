@@ -1,5 +1,8 @@
 require("requirish")._(module);
 /*global describe, it, require*/
+
+import DataValue from "lib/datamodel/DataValue";
+
 var encode_decode_round_trip_test = require("test/helpers/encode_decode_round_trip_test").encode_decode_round_trip_test;
 var verify_multi_chunk_message = require("test/helpers/verify_message_chunk").verify_multi_chunk_message;
 var verify_single_chunk_message = require("test/helpers/verify_message_chunk").verify_single_chunk_message;
@@ -122,7 +125,6 @@ describe("OPCUA Structure encoding and decoding", function () {
 
 describe("testing DataValue encoding decoding", function () {
 
-    var DataValue = require("lib/datamodel/datavalue").DataValue;
     var DataType = require("lib/datamodel/variant").DataType;
     var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 

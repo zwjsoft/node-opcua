@@ -25,6 +25,7 @@ var makeNodeId = opcua.makeNodeId;
 var VariantArrayType = opcua.VariantArrayType;
 
 import MonitoredItem from "lib/server/MonitoredItem";
+import DataValue from "lib/datamodel/DataValue";
 
 var build_server_with_temperature_device = require("test/helpers/build_server_with_temperature_device").build_server_with_temperature_device;
 var perform_operation_on_client_session = require("test/helpers/perform_operation_on_client_session").perform_operation_on_client_session;
@@ -3149,7 +3150,6 @@ module.exports = function (test) {
 
         describe("#Republish", function () {
             var VariableIds = require("lib/opcua_node_ids").VariableIds;
-            var DataValue = require("lib/datamodel/datavalue").DataValue;
             var DataType = require("lib/datamodel/variant").DataType;
             var Variant = require("lib/datamodel/variant").Variant;
 

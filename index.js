@@ -18,7 +18,7 @@ const makeExpandedNodeId       = require("lib/datamodel/expanded_nodeid").makeEx
 const coerceExpandedNodeId     = require("lib/datamodel/expanded_nodeid").coerceExpandedNodeId;
 const StatusCodes      = require("lib/datamodel/opcua_status_code").StatusCodes;
 const DataType         = require("lib/datamodel/variant").DataType;
-const DataValue        = require("lib/datamodel/datavalue").DataValue;
+import DataValue from "lib/datamodel/DataValue";
 const Variant          = require("lib/datamodel/variant").Variant;
 const VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 const NodeId           = require("lib/datamodel/nodeid").NodeId;

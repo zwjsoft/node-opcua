@@ -4,6 +4,7 @@
 require("requirish")._(module);
 
 import OPCUAClient from "lib/client/OPCUAClient";
+import DataValue from "lib/datamodel/DataValue";
 
 var should = require("should");
 var assert = require("better-assert");
@@ -310,7 +311,6 @@ describe("testing subscription objects", function () {
 var _ = require("underscore");
 var build_client_server_session = require("test/helpers/build_client_server_session").build_client_server_session;
 var VariableIds = require("lib/opcua_node_ids").VariableIds;
-var DataValue = require("lib/datamodel/datavalue").DataValue;
 var DataType = require("lib/datamodel/variant").DataType;
 
 describe("testing basic Client Server dealing with subscription at low level", function () {

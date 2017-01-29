@@ -597,7 +597,6 @@ describe("testing basic Client-Server communication", function () {
         });
 
         it("T9-2 - Server should expose 'Server_NamespaceArray' variable ", function (done) {
-            var DataValue = require("lib/datamodel/datavalue").DataValue;
             var DataType = require("lib/datamodel/variant").DataType;
             var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
             var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;

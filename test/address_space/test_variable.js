@@ -9,7 +9,9 @@ import generateAddressSpace from "lib/address_space/generateAddressSpace";
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 var DataType = require("lib/datamodel/variant").DataType;
 var Variant = require("lib/datamodel/variant").Variant;
-var DataValue = require("lib/datamodel/datavalue").DataValue;
+import DataValue from "lib/datamodel/DataValue";
+import sameDataValue from "lib/datamodel/DataValue/sameDataValue";
+
 var VariantArrayType = require("lib/datamodel/variant").VariantArrayType;
 var AttributeIds = require("lib/services/read_service").AttributeIds;
 var should = require("should");
@@ -302,8 +304,7 @@ describe("testing Variable#bindVariable", function () {
 
             var sinon = require("sinon");
 
-            var sameDataValue = require("lib/datamodel/datavalue").sameDataValue;
-
+           
             var variable = addressSpace.addVariable({
                 organizedBy: rootFolder,
                 browseName: "Variable37",

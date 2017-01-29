@@ -6,6 +6,7 @@ import ServerEngine, {
     mini_nodeset_filename,
     standard_nodeset_file 
 } from "lib/server/ServerEngine";
+import DataValue from "lib/datamodel/DataValue";
 
 var resolveNodeId = require("lib/datamodel/nodeid").resolveNodeId;
 var NodeClass = require("lib/datamodel/nodeclass").NodeClass;
@@ -20,7 +21,6 @@ var assert = require("better-assert");
 var AttributeIds = read_service.AttributeIds;
 
 var DataType = require("lib/datamodel/variant").DataType;
-var DataValue = require("lib/datamodel/datavalue").DataValue;
 var StatusCodes = require("lib/datamodel/opcua_status_code").StatusCodes;
 var makeNodeId = require("lib/datamodel/nodeid").makeNodeId;
 var coerceNodeId = require("lib/datamodel/nodeid").coerceNodeId;
@@ -1168,7 +1168,6 @@ describe("testing ServerEngine", function () {
             ];
         it("should read and set the required timestamps : TimestampsToReturn.Neither", function (done) {
 
-            var DataValue = require("lib/datamodel/datavalue").DataValue;
             var readRequest = new read_service.ReadRequest({
                 maxAge: 0,
                 timestampsToReturn: TimestampsToReturn.Neither,
@@ -1209,7 +1208,6 @@ describe("testing ServerEngine", function () {
 
         it("should read and set the required timestamps : TimestampsToReturn.Server", function () {
 
-            var DataValue = require("lib/datamodel/datavalue").DataValue;
             var readRequest = new read_service.ReadRequest({
                 maxAge: 0,
                 timestampsToReturn: TimestampsToReturn.Server,
@@ -1244,7 +1242,6 @@ describe("testing ServerEngine", function () {
 
         it("should read and set the required timestamps : TimestampsToReturn.Source", function () {
 
-            var DataValue = require("lib/datamodel/datavalue").DataValue;
             var readRequest = new read_service.ReadRequest({
                 maxAge: 0,
                 timestampsToReturn: TimestampsToReturn.Source,
@@ -1278,7 +1275,6 @@ describe("testing ServerEngine", function () {
 
         it("should read and set the required timestamps : TimestampsToReturn.Both", function () {
 
-            var DataValue = require("lib/datamodel/datavalue").DataValue;
             var readRequest = new read_service.ReadRequest({
                 maxAge: 0,
                 timestampsToReturn: TimestampsToReturn.Both,
