@@ -22,7 +22,7 @@ var createExtensionObjectDefinition = require("lib/address_space/convert_nodeset
 var assert_arrays_are_equal = require("test/helpers/typedarray_helpers").assert_arrays_are_equal;
 
 
-require("lib/datamodel/buildinfo");
+//require("lib/datamodel/buildinfo");
 
 describe("ComplexType read from XML NodeSET file shall be binary Encodable", function () {
 

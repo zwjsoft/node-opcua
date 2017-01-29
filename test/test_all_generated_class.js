@@ -24,7 +24,7 @@ function getFiles(dir, files_) {
 
 require("lib/datamodel/numeric_range");
 require("lib/datamodel/variant");
-require("lib/datamodel/buildinfo");
+//require("lib/datamodel/buildinfo");
 require("lib/services/browse_service");
 require("lib/services/historizing_service");
 require("lib/datamodel/opcua_status_code");
