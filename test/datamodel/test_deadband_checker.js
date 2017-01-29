@@ -26,31 +26,31 @@ describe("test DeadBand Checker",function() {
 
 
     it("Scalar - DeadbandType.None - should detect difference between two Int scalar",function() {
-        check_deadband(vInt32_1000,vInt32_1010,DeadbandType.None,NaN,null).should.eql(true);
-        check_deadband(vInt32_1000,vInt32_1000,DeadbandType.None,NaN,null).should.eql(false);
+        checkDeadband(vInt32_1000,vInt32_1010,DeadbandType.None,NaN,null).should.eql(true);
+        checkDeadband(vInt32_1000,vInt32_1000,DeadbandType.None,NaN,null).should.eql(false);
     });
 
     it("Scalar - DeadbandType.Absolute - should detect difference between two Int scalar",function() {
-        check_deadband(vInt32_1000,vInt32_1010,DeadbandType.Absolute, 5,null).should.eql(true);
-        check_deadband(vInt32_1000,vInt32_1010,DeadbandType.Absolute,12,null).should.eql(false);
+        checkDeadband(vInt32_1000,vInt32_1010,DeadbandType.Absolute, 5,null).should.eql(true);
+        checkDeadband(vInt32_1000,vInt32_1010,DeadbandType.Absolute,12,null).should.eql(false);
     });
 
     it("Scalar - DeadbandType.Percent - should detect difference between two Int scalar",function() {
-        check_deadband(vInt32_1000,vInt32_1010,DeadbandType.Percent, 1, 200 ).should.eql(true);
-        check_deadband(vInt32_1000,vInt32_1010,DeadbandType.Percent,12, 200).should.eql(false);
+        checkDeadband(vInt32_1000,vInt32_1010,DeadbandType.Percent, 1, 200 ).should.eql(true);
+        checkDeadband(vInt32_1000,vInt32_1010,DeadbandType.Percent,12, 200).should.eql(false);
     });
 
     it("Array  - DeadbandType.None - should detect difference between two Int scalar",function() {
-        check_deadband(vInt32_1000_Array,vInt32_1000_Array,DeadbandType.None,NaN,null).should.eql(false);
-        check_deadband(vInt32_1000_Array,vInt32_1010_Array,DeadbandType.None,NaN,null).should.eql(true);
+        checkDeadband(vInt32_1000_Array,vInt32_1000_Array,DeadbandType.None,NaN,null).should.eql(false);
+        checkDeadband(vInt32_1000_Array,vInt32_1010_Array,DeadbandType.None,NaN,null).should.eql(true);
     });
 
     it("Array  - DeadbandType.Absolute - should detect difference between two Int scalar",function() {
-        check_deadband(vInt32_1000_Array,vInt32_1000_Array,DeadbandType.Absolute, 5,null).should.eql(false);
+        checkDeadband(vInt32_1000_Array,vInt32_1000_Array,DeadbandType.Absolute, 5,null).should.eql(false);
 
-        check_deadband(vInt32_1000_Array,vInt32_1010_Array,DeadbandType.Absolute, 5,null).should.eql(true);
-        check_deadband(vInt32_1000_Array,vInt32_1010_Array,DeadbandType.Absolute,10,null).should.eql(true);
-        check_deadband(vInt32_1000_Array,vInt32_1010_Array,DeadbandType.Absolute,20,null).should.eql(false);
+        checkDeadband(vInt32_1000_Array,vInt32_1010_Array,DeadbandType.Absolute, 5,null).should.eql(true);
+        checkDeadband(vInt32_1000_Array,vInt32_1010_Array,DeadbandType.Absolute,10,null).should.eql(true);
+        checkDeadband(vInt32_1000_Array,vInt32_1010_Array,DeadbandType.Absolute,20,null).should.eql(false);
     });
 
 
@@ -63,22 +63,22 @@ describe("test DeadBand Checker",function() {
 
     it("Scalar - DeadbandType.None - should detect difference between two Int64 scalar",function() {
 
-        check_deadband(vInt64_1000,vInt64_1010,DeadbandType.None,NaN,null).should.eql(true);
-        check_deadband(vInt64_1000,vInt64_1000,DeadbandType.None,NaN,null).should.eql(false);
+        checkDeadband(vInt64_1000,vInt64_1010,DeadbandType.None,NaN,null).should.eql(true);
+        checkDeadband(vInt64_1000,vInt64_1000,DeadbandType.None,NaN,null).should.eql(false);
 
-        check_deadband(vInt64_1000,vInt64_L1000,DeadbandType.None,NaN,null).should.eql(true);
-        check_deadband(vInt64_1000,vInt64_L1010,DeadbandType.None,NaN,null).should.eql(true);
+        checkDeadband(vInt64_1000,vInt64_L1000,DeadbandType.None,NaN,null).should.eql(true);
+        checkDeadband(vInt64_1000,vInt64_L1010,DeadbandType.None,NaN,null).should.eql(true);
 
     });
 
     it("Scalar - DeadbandType.Absolute - should detect difference between two Int64 scalar",function() {
 
-        check_deadband(vInt64_1000,vInt64_1010,DeadbandType.Absolute,   5,null).should.eql(true);
-        check_deadband(vInt64_1000,vInt64_1010,DeadbandType.Absolute,  15,null).should.eql(false);
+        checkDeadband(vInt64_1000,vInt64_1010,DeadbandType.Absolute,   5,null).should.eql(true);
+        checkDeadband(vInt64_1000,vInt64_1010,DeadbandType.Absolute,  15,null).should.eql(false);
 
 
-        check_deadband(vInt64_1000,vInt64_L1000,DeadbandType.Absolute,5,null).should.eql(true);
-        check_deadband(vInt64_1000,vInt64_L1010,DeadbandType.Absolute,5,null).should.eql(true);
+        checkDeadband(vInt64_1000,vInt64_L1000,DeadbandType.Absolute,5,null).should.eql(true);
+        checkDeadband(vInt64_1000,vInt64_L1010,DeadbandType.Absolute,5,null).should.eql(true);
 
     });
 
