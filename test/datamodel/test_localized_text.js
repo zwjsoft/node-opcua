@@ -3,7 +3,8 @@ require("requirish")._(module);
 var should = require("should");
 var util = require("util");
 var BinaryStream = require("lib/misc/binaryStream").BinaryStream;
-var LocalizedText = require("lib/datamodel/localized_text").LocalizedText;
+import LocalizedText, { coerceLocalizedText } from "lib/datamodel/LocalizedText";
+
 
 describe("LocalizedText", function () {
 
@@ -90,7 +91,6 @@ describe("LocalizedText", function () {
 
     });
 
-    var coerceLocalizedText = require("lib/datamodel/localized_text").coerceLocalizedText;
     it("#coerceLocalizedText - null", function () {
 
         should.not.exist(coerceLocalizedText(null));
