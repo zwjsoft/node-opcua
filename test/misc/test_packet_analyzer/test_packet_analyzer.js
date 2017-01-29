@@ -8,7 +8,7 @@ var factories = require("lib/misc/factories");
 var should = require("should");
 var BinaryStream = require("lib/misc/binaryStream").BinaryStream;
 var ec = require("lib/misc/encode_decode");
-var makeExpandedNodeId = require("lib/datamodel/expanded_nodeid").makeExpandedNodeId;
+import { makeExpandedNodeId } from "lib/datamodel/ExpandedNodeId";
 
 
 createObject(Person2_Schema, "tmp", "_schema");
