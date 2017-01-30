@@ -1,8 +1,7 @@
-var path = "../";
 var should = require("should");
 
 
-var opcua = require(path);
+var opcua = require("index");
 global.makeNodeId = opcua.makeNodeId;
 global.DataValue = opcua.DataValue;
 global.DataType = opcua.DataType;

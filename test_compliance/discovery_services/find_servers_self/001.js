@@ -1,5 +1,4 @@
-var path = "../../../";
-var opcua = require(path);
+var opcua = require("index");
 
 var ApplicationType = opcua.ApplicationType;
 

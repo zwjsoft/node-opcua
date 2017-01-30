@@ -367,7 +367,7 @@ describe("testing Server resilience to DOS attacks", function () {
         function create_a_faulty_client(callback) {
 
             counter ++;
-            console.log(" ------------------------------------------------------------ > create_a_faulty_client");
+            console.log(" ------------------------------------------------------------ > create_a_faulty_client", port);
             var spawn = require("child_process").spawn;
             var  server_script  = path.join(__dirname,"./helpers/crashing_client");
             var options ={};

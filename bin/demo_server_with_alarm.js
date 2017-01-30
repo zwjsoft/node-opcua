@@ -1,5 +1,5 @@
 /*global require,setInterval,console */
-var opcua = require("../index");
+var opcua = require("index");
 
 var path = require("path");
 var fs = require("fs");

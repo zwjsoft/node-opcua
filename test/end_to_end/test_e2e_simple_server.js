@@ -3,7 +3,7 @@ require("requirish")._(module);
 var should = require("should");
 var async = require("async");
 
-var opcua = require("index.js");
+var opcua = require("index");
 var OPCUAServer = opcua.OPCUAServer;
 var OPCUAClient = opcua.OPCUAClient;
 

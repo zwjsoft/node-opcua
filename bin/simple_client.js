@@ -9,7 +9,7 @@ var Table = require('easy-table');
 var async = require("async");
 var utils = require('lib/misc/utils');
 var assert = require("better-assert");
-var opcua = require("../");
+var opcua = require("index");
 var VariableIds = opcua.VariableIds;
 
 //xx ar UserNameIdentityToken = opcua.session_service.UserNameIdentityToken;

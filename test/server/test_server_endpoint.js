@@ -3,7 +3,7 @@ import crypto_utils from "lib/misc/crypto_utils";
 
 var should = require("should");
 
-var opcua = require("index.js");
+var opcua = require("index");
 import OPCUAServerEndPoint from "lib/server/OPCUAServerEndPoint";
 var MessageSecurityMode = opcua.MessageSecurityMode;
 var SecurityPolicy = opcua.SecurityPolicy;
