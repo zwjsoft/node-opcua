@@ -1,7 +1,7 @@
 /* global describe,require,it,before */
 "use strict";
 require("requirish")._(module);
-var opcua = require("../../");
+var opcua = require("index");
 var AddressSpace = opcua.AddressSpace;
 var should = require("should");
 var assert = require("assert");

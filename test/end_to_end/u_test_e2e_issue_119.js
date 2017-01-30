@@ -6,7 +6,7 @@ var assert = require("better-assert");
 var should = require("should");
 var async = require("async");
 
-var opcua = require("index.js");
+var opcua = require("index");
 
 var OPCUAClient = opcua.OPCUAClient;
 var ClientSession = opcua.ClientSession;

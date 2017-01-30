@@ -30,7 +30,7 @@ var argv = require('yargs')
     .alias("h","help")
     .argv;
 
-var opcua = require("..");
+var opcua = require("index");
 var _ = require("underscore");
 var path = require("path");
 var assert = require("assert");

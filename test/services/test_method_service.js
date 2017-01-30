@@ -5,7 +5,7 @@ require("requirish")._(module);
 var encode_decode_round_trip_test = require("test/helpers/encode_decode_round_trip_test").encode_decode_round_trip_test;
 var BinaryStream = require("lib/misc/binaryStream").BinaryStream;
 
-var opcua = require("../../");
+var opcua = require("index");
 var DataType = opcua.DataType;
 var utils = require("lib/misc/utils");
 

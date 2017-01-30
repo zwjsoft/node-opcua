@@ -15,7 +15,7 @@ var assert = require("better-assert");
 var path = require("path");
 
 
-var opcua = require("index.js");
+var opcua = require("index");
 
 describe("Issue 162 : demonstrate how to modify an instantiate object variable", function () {
 

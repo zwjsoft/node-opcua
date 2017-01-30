@@ -3,7 +3,7 @@
 require("requirish")._(module);
 var _ = require("underscore");
 var assert = require("better-assert");
-var opcua = require("index.js");
+var opcua = require("../../index");
 var StatusCodes = opcua.StatusCodes;
 var Variant = opcua.Variant;
 var DataType = opcua.DataType;

@@ -6,7 +6,7 @@ var should = require("should");
 var async = require("async");
 var _ = require("underscore");
 
-var opcua = require("index.js");
+var opcua = require("index");
 var OPCUAClient = opcua.OPCUAClient;
 var perform_operation_on_client_session = require("test/helpers/perform_operation_on_client_session").perform_operation_on_client_session;0
 var securityMode = opcua.MessageSecurityMode.NONE;

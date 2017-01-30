@@ -6,7 +6,7 @@ import OPCUAServer from "lib/server/OPCUAServer";
 var should = require("should");
 var resourceLeakDetector = require("test/helpers/resource_leak_detector").resourceLeakDetector;
 
-var opcua = require("../../index");
+var opcua = require("index");
 var NodeId = opcua.NodeId;
 
 

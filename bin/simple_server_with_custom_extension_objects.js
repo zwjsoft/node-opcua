@@ -10,7 +10,7 @@ var argv = require('yargs')
     .describe("port")
     .alias('p', 'port')
     .argv;
-var opcua = require("../index");
+var opcua = require("index");
 var _ = require("underscore");
 var path = require("path");
 var assert = require("assert");
