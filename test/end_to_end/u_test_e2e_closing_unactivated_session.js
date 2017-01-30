@@ -6,7 +6,7 @@ var should = require("should");
 var async = require("async");
 var _ = require("underscore");
 
-var opcua = require("index.js");
+var opcua = require("index");
 var OPCUAClient = opcua.OPCUAClient;
 
 // bug : server reported to many datavalue changed when client monitored a UAVariable consructed with variation 1");

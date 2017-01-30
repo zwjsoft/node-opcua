@@ -2,7 +2,6 @@ require("babel-register");
 
 
 function main() {
-
     if (process.argv.length != 3) {
         console.log("Invalid number of   Argument ", process.argv);
         return;
@@ -11,7 +10,7 @@ function main() {
     console.log("process.argv.length ", process.argv.length);
 
     /*global require,console,setTimeout */
-    var opcua = require("../../"); // node-opcua
+    var opcua = require("../../index"); // node-opcua
     var async = require("async");
 
 

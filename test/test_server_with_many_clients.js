@@ -6,7 +6,7 @@ var async = require("async");
 var util = require("util");
 var _ = require("underscore");
 
-var opcua = require("../");
+var opcua = require("index");
 
 var ClientSession = opcua.ClientSession;
 assert(_.isFunction(ClientSession));

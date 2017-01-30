@@ -6,7 +6,7 @@ var treeify = require('treeify');
 require('colors');
 var sprintf = require('sprintf');
 
-var opcua = require("..");
+var opcua = require("index");
 import UAProxyManager from "lib/client/UAProxyManager"
 
 

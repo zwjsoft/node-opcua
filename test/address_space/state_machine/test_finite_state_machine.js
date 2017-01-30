@@ -1,7 +1,7 @@
 "use strict";
 require("requirish")._(module);
 
-var opcua = require("../../../index.js");
+var opcua = require("index");
 var path = require("path");
 var should = require("should");
 var assert = require("better-assert");
