@@ -191,7 +191,7 @@ describe("MessageBuilder", function () {
     it("should decode this problematic ReadResponse ", function (done) {
 
         //
-        require("../..");
+        require("index");
 
         var ec = require("lib/misc/encode_decode");
         var BinaryStream= require("lib/misc/binaryStream").BinaryStream;

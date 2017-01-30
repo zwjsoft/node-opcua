@@ -2,7 +2,7 @@ require("requirish")._(module);
 var assert = require("better-assert");
 var _ = require("underscore");
 
-var opcua = require("index.js");
+var opcua = require("../../index");
 
 var OPCUAServer = opcua.OPCUAServer;
 var OPCUAClient = opcua.OPCUAClient;

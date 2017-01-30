@@ -13,7 +13,7 @@ var should = require("should");
 var sinon = require("sinon");
 var _ = require("underscore");
 
-var opcua = require("index.js");
+var opcua = require("index");
 var StatusCodes = opcua.StatusCodes;
 var OPCUAClient = opcua.OPCUAClient;
 var ClientSubscription = opcua.ClientSubscription;

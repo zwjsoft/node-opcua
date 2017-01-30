@@ -6,7 +6,7 @@ var assert = require("better-assert");
 var should = require("should");
 
 
-var opcua = require("index.js");
+var opcua = require("../../index");
 var StatusCodes = opcua.StatusCodes;
 var Variant = opcua.Variant;
 var DataType = opcua.DataType;

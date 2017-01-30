@@ -5,7 +5,7 @@ import crypto_utils from "lib/misc/crypto_utils";
 import ClientSecureChannelLayer from "lib/client/ClientSecureChannelLayer";
 
 
-var opcua = require("index.js");
+var opcua = require("index");
 
 var should = require("should");
 var assert = require("better-assert");

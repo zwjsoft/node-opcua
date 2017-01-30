@@ -7,7 +7,7 @@ var async = require("async");
 var _ = require("underscore");
 var util = require("util");
 
-var opcua = require("../../index");
+var opcua = require("index");
 var OPCUAClient = opcua.OPCUAClient;
 var StatusCodes = opcua.StatusCodes;
 var Variant = opcua.Variant;

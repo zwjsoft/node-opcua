@@ -2,7 +2,7 @@
 require("requirish")._(module);
 var should = require("should");
 var _ = require("underscore");
-var opcua = require("../../");
+var opcua = require("index");
 var DataType = opcua.DataType;
 
 var BinaryStream = require("lib/misc/binaryStream").BinaryStream;

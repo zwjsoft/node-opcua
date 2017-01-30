@@ -7,7 +7,7 @@ var async = require("async");
 
 var perform_operation_on_raw_subscription = require("test/helpers/perform_operation_on_client_session").perform_operation_on_raw_subscription;
 
-var opcua = require("index.js");
+var opcua = require("index");
 var OPCUAClient = opcua.OPCUAClient;
 var DataValue = opcua.DataValue;
 var DataType = opcua.DataType;

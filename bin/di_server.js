@@ -12,7 +12,7 @@ var argv = require('yargs')
     .alias('p','port')
     .argv;
 
-var opcua = require("..");
+var opcua = require("index");
 var _ = require("underscore");
 var OPCUAServer = opcua.OPCUAServer;
 var Variant = opcua.Variant;
