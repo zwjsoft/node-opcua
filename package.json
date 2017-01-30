@@ -10,7 +10,7 @@
   },
   "scripts": {
     "_x_preinstall": "npm i browserify -g",
-    "postinstall": "babel-node postinstall.js",
+    "postinstall": "node bin/crypto_create_CA.js demo --silent",
     "pretest": "babel-node bin/crypto_create_CA.js demo --dev --silent",
     "test_with_trace": "mocha test --color -R spec --recursive --timeout 200000 --bail --compilers js:babel-core/register -r ./lib/misc/trace_console_log",
     "test": "npm run build && mocha",
