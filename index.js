@@ -132,7 +132,7 @@ const DataTypeIds = require("lib/opcua_node_ids").DataTypeIds;
 // filtering tools
 const constructEventFilter = require("lib/tools/tools_event_filter").constructEventFilter;
 const checkSelectClause = require("lib/tools/tools_event_filter").checkSelectClause;
-const buildVariantArray = require("lib/datamodel/variant_tools").buildVariantArray;
+const buildVariantArray = require("lib/datamodel/variant-tools").buildVariantArray;
 const encode_decode = require("lib/misc/encode_decode");
 
 const factories = require("lib/misc/factories");

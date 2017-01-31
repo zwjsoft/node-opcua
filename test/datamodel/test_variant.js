@@ -922,7 +922,7 @@ describe("Variant with enumeration", function () {
 
 });
 
-var sameVariant = require("lib/datamodel/variant_tools").sameVariant;
+var sameVariant = require("lib/datamodel/variant-tools").sameVariant;
 
 var sameVariantSlow = function (v1, v2) {
     return _.isEqual(v1, v2);

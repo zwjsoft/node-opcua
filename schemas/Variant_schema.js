@@ -15,7 +15,7 @@ const Variant_TypeMask = 0x3F;
 import {
     coerceVariantType,
     isValidVariant
-} from "lib/datamodel/variant_tools";
+} from "lib/datamodel/variant-tools";
 
 export {isValidVariant};
 
